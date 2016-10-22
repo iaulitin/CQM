@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CQM_Project.iml" filepath="$PROJECT_DIR$/CQM_Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cqm-app/cqm-app.iml" filepath="$PROJECT_DIR$/cqm-app/cqm-app.iml" />
     </modules>
   </component>
 </project>

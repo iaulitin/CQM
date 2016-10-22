@@ -22,10 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="CQM_Project" />
+        <module name="cqm-app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cqm-app" target="1.5" />
       <module name="CQM_Project" target="1.5" />
     </bytecodeTargetLevel>
   </component>
