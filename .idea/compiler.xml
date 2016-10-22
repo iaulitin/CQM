@@ -23,10 +23,18 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="cqm-app" />
+        <module name="CQM-data-access" />
+        <module name="CQM-ear" />
+        <module name="CQM-ejb" />
+        <module name="CQM-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cqm-app" target="1.5" />
+      <module name="CQM-data-access" target="1.5" />
+      <module name="CQM-ear" target="1.5" />
+      <module name="CQM-ejb" target="1.5" />
+      <module name="CQM-web" target="1.5" />
       <module name="CQM_Project" target="1.5" />
     </bytecodeTargetLevel>
   </component>
