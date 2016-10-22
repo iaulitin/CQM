@@ -22,10 +22,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="CQM_Project" />
+        <module name="cqm-application" />
+        <module name="cqm-data-access" />
+        <module name="cqm-ejb" />
+        <module name="cqm-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cqm-application" target="1.5" />
+      <module name="cqm-data-access" target="1.5" />
+      <module name="cqm-ejb" target="1.5" />
+      <module name="cqm-web" target="1.5" />
       <module name="CQM_Project" target="1.5" />
     </bytecodeTargetLevel>
   </component>

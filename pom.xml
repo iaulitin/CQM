@@ -7,32 +7,15 @@
     <groupId>com.netcracker.CQM_Project</groupId>
     <artifactId>CQM_Project</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>4.3.3.RELEASE</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>4.3.3.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>4.3.3.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.ejb</groupId>
-            <artifactId>ejb-api</artifactId>
-            <version>3.0</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>cqm-application</module>
+        <module>cqm-data-access</module>
+        <module>cqm-ejb</module>
+        <module>cqm-web</module>
+    </modules>
 
     
 </project>
