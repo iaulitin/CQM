@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6f39b5d-5d1a-4aeb-902d-de36255f8fec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-application/target/cqm-application-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-data-access/target/cqm-data-access-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-ejb/target/cqm-ejb-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-web/target/cqm-web-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-application/cqm-application.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-application/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-application/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-data-access/cqm-data-access.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-data-access/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-data-access/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-ejb/cqm-ejb.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-ejb/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-ejb/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-web/cqm-web.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-web/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cqm-web/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CQM_Project.iml" afterPath="$PROJECT_DIR$/CQM_Project.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-    </list>
+    <list default="true" id="f6f39b5d-5d1a-4aeb-902d-de36255f8fec" name="Default" comment="" />
     <ignored path="CQM_Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -755,15 +734,15 @@
       <workItem from="1477008558646" duration="1446000" />
       <workItem from="1477071156771" duration="648000" />
       <workItem from="1477134920864" duration="5538000" />
-      <workItem from="1477153923683" duration="1201000" />
+      <workItem from="1477153923683" duration="1799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8833000" />
+    <option name="totallyTimeSpent" value="9431000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
