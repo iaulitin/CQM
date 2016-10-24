@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CQM-data-access/CQM-data-access.iml" filepath="$PROJECT_DIR$/CQM-data-access/CQM-data-access.iml" />
       <module fileurl="file://$PROJECT_DIR$/CQM-ear/CQM-ear.iml" filepath="$PROJECT_DIR$/CQM-ear/CQM-ear.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CQM-ejb/CQM-ejb.iml" filepath="$PROJECT_DIR$/CQM-ejb/CQM-ejb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CQM-web/CQM-web.iml" filepath="$PROJECT_DIR$/CQM-web/CQM-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/CQM_Project.iml" filepath="$PROJECT_DIR$/CQM_Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cqm-app/cqm-app.iml" filepath="$PROJECT_DIR$/cqm-app/cqm-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cqm-application/cqm-application.iml" filepath="$PROJECT_DIR$/cqm-application/cqm-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CQM-data-access/cqm-data-access.iml" filepath="$PROJECT_DIR$/CQM-data-access/cqm-data-access.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CQM-ejb/cqm-ejb.iml" filepath="$PROJECT_DIR$/CQM-ejb/cqm-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CQM-web/cqm-web.iml" filepath="$PROJECT_DIR$/CQM-web/cqm-web.iml" />
     </modules>
   </component>
 </project>
