@@ -24,17 +24,22 @@
         <processorPath useClasspath="true" />
         <module name="cqm-application" />
         <module name="cqm-data-access" />
+        <module name="CQM-data-access" />
         <module name="CQM-ear" />
         <module name="cqm-ear" />
         <module name="cqm-ejb" />
+        <module name="CQM-ejb" />
         <module name="cqm-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cqm" target="1.5" />
       <module name="cqm-application" target="1.5" />
+      <module name="CQM-data-access" target="1.5" />
       <module name="cqm-data-access" target="1.5" />
       <module name="CQM-ear" target="1.5" />
       <module name="cqm-ear" target="1.5" />
+      <module name="CQM-ejb" target="1.5" />
       <module name="cqm-ejb" target="1.5" />
       <module name="cqm-web" target="1.5" />
       <module name="CQM_Project" target="1.5" />
