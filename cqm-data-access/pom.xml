@@ -10,16 +10,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>cqm-data-access</artifactId>
+    <groupId>com.netcracker.CQM_Project</groupId>
+    <artifactId>CQM-data-access</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>4.3.3.RELEASE</version>
-        </dependency>
-    </dependencies>
 
     
 </project>
