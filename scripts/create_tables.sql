@@ -33,7 +33,7 @@ CREATE TABLE cqm_reports (
   cafe_id    INT,
   load       INT,
   date       DATE,
-  CONSTRAINT pk_user_id PRIMARY KEY (report_id),
+  CONSTRAINT pk_report_id PRIMARY KEY (report_id),
   CONSTRAINT fk_reports_user FOREIGN KEY (user_id) REFERENCES cqm_users(user_id),
   CONSTRAINT fk_reports_cafe FOREIGN KEY (cafe_id) REFERENCES cqm_cafeterias(cafe_id)
 );

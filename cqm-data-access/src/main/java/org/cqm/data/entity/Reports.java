@@ -3,12 +3,14 @@ package org.cqm.data.entity;
 
 import  javax.persistence.*;
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "Reports")
 @NamedQuery(name = "Report.getAll", query = "select r from Reports r")
 public class Reports {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer reportId;
     @Column (name = "user_id")
     private Integer userId;
@@ -17,9 +19,10 @@ public class Reports {
     @Column (name = "load")
     private Integer load;
     @Column (name = "date")
-    private Calendar date;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
 
-    public Reports(Integer reportId, Integer userId, Integer cafeId, Integer load, Calendar date) {
+    public Reports(Integer reportId, Integer userId, Integer cafeId, Integer load, Date date) {
         this.reportId = reportId;
         this.userId = userId;
         this.cafeId = cafeId;
@@ -63,12 +66,37 @@ public class Reports {
         this.load = load;
     }
 
-    public Calendar getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Reports reports = (Reports) o;
+
+        if (reportId != null ? !reportId.equals(reports.reportId) : reports.reportId != null) return false;
+        if (userId != null ? !userId.equals(reports.userId) : reports.userId != null) return false;
+        if (cafeId != null ? !cafeId.equals(reports.cafeId) : reports.cafeId != null) return false;
+        if (load != null ? !load.equals(reports.load) : reports.load != null) return false;
+        return date != null ? date.equals(reports.date) : reports.date == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = reportId != null ? reportId.hashCode() : 0;
+        result = 31 * result + (userId != null ? userId.hashCode() : 0);
+        result = 31 * result + (cafeId != null ? cafeId.hashCode() : 0);
+        result = 31 * result + (load != null ? load.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        return result;
     }
 
     @Override
