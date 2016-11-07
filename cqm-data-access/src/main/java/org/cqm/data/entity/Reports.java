@@ -10,14 +10,19 @@ import java.util.Date;
 @NamedQuery(name = "Report.getAll", query = "select r from Reports r")
 public class Reports {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "catalog_seq")
     private Integer reportId;
+
     @Column (name = "user_id")
     private Integer userId;
+
     @Column (name = "cafe_id")
     private Integer cafeId;
+
     @Column (name = "load")
     private Integer load;
+
     @Column (name = "date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;

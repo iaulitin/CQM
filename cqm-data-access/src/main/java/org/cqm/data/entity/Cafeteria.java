@@ -7,9 +7,13 @@ import javax.persistence.*;
 @NamedQuery(name = "Cafeterias.getAll", query = "select c from Cafeterias c")
 public class Cafeteria {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "catalog_seq")
     private Integer cafeId;
+
     @Column(name = "name")
     private String cafeName;
+
     @Column (name = "address")
     private String cafeAddress;
 
@@ -54,5 +58,26 @@ public class Cafeteria {
                 ", cafeName='" + cafeName + '\'' +
                 ", cafeAddress='" + cafeAddress + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cafeteria cafeteria = (Cafeteria) o;
+
+        if (cafeId != null ? !cafeId.equals(cafeteria.cafeId) : cafeteria.cafeId != null) return false;
+        if (cafeName != null ? !cafeName.equals(cafeteria.cafeName) : cafeteria.cafeName != null) return false;
+        return cafeAddress != null ? cafeAddress.equals(cafeteria.cafeAddress) : cafeteria.cafeAddress == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = cafeId != null ? cafeId.hashCode() : 0;
+        result = 31 * result + (cafeName != null ? cafeName.hashCode() : 0);
+        result = 31 * result + (cafeAddress != null ? cafeAddress.hashCode() : 0);
+        return result;
     }
 }

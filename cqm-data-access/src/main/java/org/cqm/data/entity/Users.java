@@ -8,21 +8,31 @@ import javax.persistence.*;
 
 public class Users {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "catalog_seq")
     private Integer userId;
+
     @Column (name = "first_name")
     private String firstName;
+
     @Column(name = "last_name")
     private String lastName;
+
     @Column(name = "login")
     private String userLogin;
+
     @Column(name = "email")
     private String userEmail;
+
     @Column(name = "hash")
     private String hashPassword;
+
     @Column(name = "salt")
     private String saltPassword;
+
     @Column(name = "rating")
     private int userRating;
+
     @Column(name = "isAdmin")
     private boolean isAdmin;
 
@@ -128,6 +138,38 @@ public class Users {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Users users = (Users) o;
+
+        if (userRating != users.userRating) return false;
+        //if (isAdmin != users.isAdmin) return false;
+        if (userId != null ? !userId.equals(users.userId) : users.userId != null) return false;
+        if (firstName != null ? !firstName.equals(users.firstName) : users.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(users.lastName) : users.lastName != null) return false;
+        if (userLogin != null ? !userLogin.equals(users.userLogin) : users.userLogin != null) return false;
+        if (userEmail != null ? !userEmail.equals(users.userEmail) : users.userEmail != null) return false;
+        if (hashPassword != null ? !hashPassword.equals(users.hashPassword) : users.hashPassword != null) return false;
+        return saltPassword != null ? saltPassword.equals(users.saltPassword) : users.saltPassword == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = userId != null ? userId.hashCode() : 0;
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (userLogin != null ? userLogin.hashCode() : 0);
+        result = 31 * result + (userEmail != null ? userEmail.hashCode() : 0);
+        result = 31 * result + (hashPassword != null ? hashPassword.hashCode() : 0);
+        result = 31 * result + (saltPassword != null ? saltPassword.hashCode() : 0);
+        result = 31 * result + userRating;
+        //result = 31 * result + (isAdmin ? 1 : 0);
+        return result;
+    }
 }
 
 
