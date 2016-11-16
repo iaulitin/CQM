@@ -5,17 +5,15 @@
                                  http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
              version="1.0">
     <persistence-unit name="cqmProject" transaction-type="RESOURCE_LOCAL">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!--<provider>org.hibernate.ejb.HibernatePersistence</provider>-->
         <properties>
             <!--driver which we'll use in our work-->
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
             <property name="hibernate.connection.username" value="postgres"/>
-            <property name="hibernate.connection.password" value="postgres"/>
+            <property name="hibernate.connection.password" value="89061361420"/>
             <!--here is the status of the JPA's work-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <!--dialect of the current database-->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
         </properties>
     </persistence-unit>
 </persistence>

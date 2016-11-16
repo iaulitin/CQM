@@ -19,6 +19,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -27,32 +28,19 @@ import java.util.Properties;
  * Configuration class of Spring IoC container
  */
 @Configuration
-@ComponentScan(basePackages = "org.cqm.data")
+@ComponentScan(basePackages = "org.cqm.data.configuration")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "org.cqm.data")
-public class AppConfig implements TransactionManagementConfigurer{
-
-    @Value("${dataSource.driverClassName}")
-    private String driver;
-    @Value("${dataSource.url}")
-    private String url;
-    @Value("${dataSource.username}")
-    private String username;
-    @Value("${dataSource.password}")
-    private String password;
-    @Value("${hibernate.dialect}")
-    private String dialect;
-    @Value("${hibernate.hbm2ddl.auto}")
-    private String hbm2ddlAuto;
+public class AppConfig {
 
     @Bean
     public DataSource dataSource() {
         //Connection pool
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(this.driver);
-        dataSource.setUrl(this.url);
-        dataSource.setUsername(this.username);
-        dataSource.setPassword(this.password);
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("89061361420");
         return dataSource;
     }
 
@@ -62,7 +50,7 @@ public class AppConfig implements TransactionManagementConfigurer{
         return new HibernateJpaDialect();
     }
 
-    /*
+
     @Bean
     public JpaVendorAdapter jpaVendorAdapter() {
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -70,20 +58,20 @@ public class AppConfig implements TransactionManagementConfigurer{
         vendorAdapter.setGenerateDdl(false);
         return vendorAdapter;
     }
-    */
 
     @Bean
     protected LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-        factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+        factory.setJpaVendorAdapter(jpaVendorAdapter());
         factory.setPackagesToScan("org.cqm.data.entity");
         factory.setDataSource(dataSource());
-        //factory.setJpaDialect(hibernateJpaDialect());
+        factory.setJpaDialect(hibernateJpaDialect());
         factory.setPersistenceUnitName("cqmProject");
-
+        /*
         Properties jpaProperties = new Properties();
         jpaProperties.put(Environment.DIALECT, this.dialect);
         jpaProperties.put(Environment.HBM2DDL_AUTO, this.hbm2ddlAuto);
+        */
         return factory;
     }
 
@@ -95,7 +83,4 @@ public class AppConfig implements TransactionManagementConfigurer{
         return transactionManager;
     }
 
-    public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return new JpaTransactionManager();
-    }
 }

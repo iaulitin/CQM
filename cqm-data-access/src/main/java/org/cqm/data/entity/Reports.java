@@ -2,6 +2,7 @@ package org.cqm.data.entity;
 
 
 import  javax.persistence.*;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
 public class Reports {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
-    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "catalog_seq")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
     private Integer reportId;
 
     @Column (name = "user_id")
@@ -26,6 +27,9 @@ public class Reports {
     @Column (name = "date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
+
+    public Reports() {
+    }
 
     public Reports(Integer reportId, Integer userId, Integer cafeId, Integer load, Date date) {
         this.reportId = reportId;

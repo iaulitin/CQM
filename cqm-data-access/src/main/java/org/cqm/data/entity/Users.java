@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
-    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "catalog_seq")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
     private Integer userId;
 
     @Column (name = "first_name")

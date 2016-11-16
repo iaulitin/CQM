@@ -3,12 +3,12 @@ package org.cqm.data.entity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "Cafeterias")
-@NamedQuery(name = "Cafeterias.getAll", query = "select c from Cafeterias c")
+@Table (name = "Cafeteria")
+@NamedQuery(name = "Cafeterias.getAll", query = "select c from Cafeteria c")
 public class Cafeteria {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
-    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "catalog_seq")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
     private Integer cafeId;
 
     @Column(name = "name")

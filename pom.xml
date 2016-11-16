@@ -13,6 +13,7 @@
         <org.springframework.version>4.3.3.RELEASE</org.springframework.version>
         <javax.ejb>3.0</javax.ejb>
         <javax.persistence.version>1.0</javax.persistence.version>
+        <hibernate-core-version>5.1.0.Final</hibernate-core-version>
     </properties>
 
     <modules>
