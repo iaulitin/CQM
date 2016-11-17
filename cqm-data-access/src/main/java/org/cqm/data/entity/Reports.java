@@ -25,7 +25,7 @@ public class Reports {
     private Integer load;
 
     @Column (name = "date")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     public Reports() {

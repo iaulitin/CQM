@@ -1,12 +1,10 @@
 import org.cqm.data.configuration.AppConfig;
-import org.cqm.data.entity.Reports;
 import org.cqm.data.entity.Users;
-import org.cqm.data.repositories.CafeteriaRepository;
-import org.cqm.data.repositories.ReportsRepository;
 import org.cqm.data.repositories.UsersRepository;
-import org.cqm.data.services.UsersService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.List;
 
 /**
  * Created by Dmitriy on 08.11.2016.
@@ -24,27 +22,35 @@ public class Tester {
         //logger.info("Testing configuration...");
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        //UsersService service = context.getBean(UsersService.class);
-        UsersRepository repository = context.getBean(UsersRepository.class);
-        Users user = new Users();
-        user.setFirstName("wtf?");
-        repository.save(user);
-    /*
         UsersRepository repository = context.getBean(UsersRepository.class);
 
-        Users user = new Users();
-        user.setFirstName("Vadim");
-        user.setLastName("Ivanov");
-        user.setUserEmail("tester@mail.ru");
-        user.setHashPassword("123");
-        user.setSaltPassword("456");
-        user.setAdmin(true);
-        user.setUserLogin("ivadim");
-        user.setUserRating(1);
+        Users user1 = new Users();
+        user1.setFirstName("Dmitry");
+        user1.setLastName("Vorobyev");
+        user1.setUserEmail("vorobiev.dima@yandex.ru");
+        user1.setHashPassword("12qw");
+        user1.setSaltPassword("34er");
+        user1.setAdmin(true);
+        user1.setUserLogin("teaset");
+        user1.setUserRating(1);
 
-        repository.save(user);
-*/
+        Users user2 = new Users();
+        user2.setFirstName("Ilya");
+        user2.setLastName("Ulitin");
+        user2.setUserEmail("iaulitin@yandex.ru");
+        user2.setHashPassword("qw12");
+        user2.setSaltPassword("er34");
+        user2.setAdmin(true);
+        user2.setUserLogin("mobilnik");
+        user2.setUserRating(1);
 
-//        System.out.println(repository.);
+        repository.save(user1);
+        repository.save(user2);
+
+        List<String> users = repository.findByLastName("Vorobyev");
+        System.out.println(users);
+
+
+        //System.out.println(repository);
     }
 }
