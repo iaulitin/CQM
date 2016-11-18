@@ -1,9 +1,8 @@
 import org.cqm.data.configuration.AppConfig;
-import org.cqm.data.entity.Users;
-import org.cqm.data.repositories.UsersRepository;
+import org.cqm.data.entity.User;
+import org.cqm.data.repositories.UserRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import java.util.List;
 
 /**
@@ -22,9 +21,9 @@ public class Tester {
         //logger.info("Testing configuration...");
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        UsersRepository repository = context.getBean(UsersRepository.class);
+        UserRepository repository = context.getBean(UserRepository.class);
 
-        Users user1 = new Users();
+        User user1 = new User();
         user1.setFirstName("Dmitry");
         user1.setLastName("Vorobyev");
         user1.setUserEmail("vorobiev.dima@yandex.ru");
@@ -34,7 +33,7 @@ public class Tester {
         user1.setUserLogin("teaset");
         user1.setUserRating(1);
 
-        Users user2 = new Users();
+        User user2 = new User();
         user2.setFirstName("Ilya");
         user2.setLastName("Ulitin");
         user2.setUserEmail("iaulitin@yandex.ru");

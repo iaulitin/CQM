@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "Users")
 @NamedQuery(name = "Users.getAll", query = "select c from Users c")
 
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
     @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
@@ -36,7 +36,7 @@ public class Users {
     @Column(name = "isAdmin")
     private boolean isAdmin;
 
-    public Users(Integer userId, String firstName, String lastName, String userLogin, String userEmail, String hashPassword, String saltPassword, int userRating, boolean isAdmin) {
+    public User(Integer userId, String firstName, String lastName, String userLogin, String userEmail, String hashPassword, String saltPassword, int userRating, boolean isAdmin) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -48,7 +48,7 @@ public class Users {
         this.isAdmin = isAdmin;
     }
 
-    public Users() {
+    public User() {
     }
 
     public Integer getUserId() {
@@ -125,7 +125,7 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "userId=" + userId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -143,17 +143,17 @@ public class Users {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Users users = (Users) o;
+        User user = (User) o;
 
-        if (userRating != users.userRating) return false;
-        //if (isAdmin != users.isAdmin) return false;
-        if (userId != null ? !userId.equals(users.userId) : users.userId != null) return false;
-        if (firstName != null ? !firstName.equals(users.firstName) : users.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(users.lastName) : users.lastName != null) return false;
-        if (userLogin != null ? !userLogin.equals(users.userLogin) : users.userLogin != null) return false;
-        if (userEmail != null ? !userEmail.equals(users.userEmail) : users.userEmail != null) return false;
-        if (hashPassword != null ? !hashPassword.equals(users.hashPassword) : users.hashPassword != null) return false;
-        return saltPassword != null ? saltPassword.equals(users.saltPassword) : users.saltPassword == null;
+        if (userRating != user.userRating) return false;
+        //if (isAdmin != user.isAdmin) return false;
+        if (userId != null ? !userId.equals(user.userId) : user.userId != null) return false;
+        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
+        if (userLogin != null ? !userLogin.equals(user.userLogin) : user.userLogin != null) return false;
+        if (userEmail != null ? !userEmail.equals(user.userEmail) : user.userEmail != null) return false;
+        if (hashPassword != null ? !hashPassword.equals(user.hashPassword) : user.hashPassword != null) return false;
+        return saltPassword != null ? saltPassword.equals(user.saltPassword) : user.saltPassword == null;
 
     }
 

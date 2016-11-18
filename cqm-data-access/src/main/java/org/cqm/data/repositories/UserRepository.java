@@ -1,6 +1,6 @@
 package org.cqm.data.repositories;
 
-import org.cqm.data.entity.Reports;
+import org.cqm.data.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -11,10 +11,8 @@ import java.util.List;
 /**
  * Created by Dmitriy on 08.11.2016.
  */
-
 @Repository
-public interface ReportsRepository extends CrudRepository<Reports, Integer> {
-    @Query("select r from Reports r where r.load = :load")
-    List<Integer> findByLoad(@Param("load") Integer load);
-
+public interface UserRepository extends CrudRepository<User, Integer> {
+    @Query("select u from Users u where u.lastName = :lastName")
+    List<String> findByLastName(@Param("lastName") String lastName);
 }

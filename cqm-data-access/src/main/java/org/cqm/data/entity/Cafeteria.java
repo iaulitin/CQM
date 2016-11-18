@@ -3,7 +3,7 @@ package org.cqm.data.entity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "Cafeteria")
+@Table (name = "Cafeterias")
 @NamedQuery(name = "Cafeterias.getAll", query = "select c from Cafeteria c")
 public class Cafeteria {
     @Id

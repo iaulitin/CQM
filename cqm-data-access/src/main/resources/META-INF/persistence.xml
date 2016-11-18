@@ -9,9 +9,9 @@
         <properties>
             <!--driver which we'll use in our work-->
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5433/postgres"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
             <property name="hibernate.connection.username" value="postgres"/>
-            <property name="hibernate.connection.password" value="postgres"/>
+            <property name="hibernate.connection.password" value="qwe123"/>
             <!--here is the status of the JPA's work-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>

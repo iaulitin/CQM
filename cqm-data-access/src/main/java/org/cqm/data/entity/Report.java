@@ -2,14 +2,12 @@ package org.cqm.data.entity;
 
 
 import  javax.persistence.*;
-import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Date;
 
 @Entity
 @Table(name = "Reports")
-@NamedQuery(name = "Report.getAll", query = "select r from Reports r")
-public class Reports {
+@NamedQuery(name = "Report.getAll", query = "select r from Report r")
+public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
     @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
@@ -28,10 +26,10 @@ public class Reports {
     @Temporal(TemporalType.DATE)
     private Date date;
 
-    public Reports() {
+    public Report() {
     }
 
-    public Reports(Integer reportId, Integer userId, Integer cafeId, Integer load, Date date) {
+    public Report(Integer reportId, Integer userId, Integer cafeId, Integer load, Date date) {
         this.reportId = reportId;
         this.userId = userId;
         this.cafeId = cafeId;
@@ -39,7 +37,7 @@ public class Reports {
         this.date = date;
     }
 
-    public Reports(Integer reportId) {
+    public Report(Integer reportId) {
 
     }
 
@@ -88,13 +86,13 @@ public class Reports {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Reports reports = (Reports) o;
+        Report report = (Report) o;
 
-        if (reportId != null ? !reportId.equals(reports.reportId) : reports.reportId != null) return false;
-        if (userId != null ? !userId.equals(reports.userId) : reports.userId != null) return false;
-        if (cafeId != null ? !cafeId.equals(reports.cafeId) : reports.cafeId != null) return false;
-        if (load != null ? !load.equals(reports.load) : reports.load != null) return false;
-        return date != null ? date.equals(reports.date) : reports.date == null;
+        if (reportId != null ? !reportId.equals(report.reportId) : report.reportId != null) return false;
+        if (userId != null ? !userId.equals(report.userId) : report.userId != null) return false;
+        if (cafeId != null ? !cafeId.equals(report.cafeId) : report.cafeId != null) return false;
+        if (load != null ? !load.equals(report.load) : report.load != null) return false;
+        return date != null ? date.equals(report.date) : report.date == null;
 
     }
 
@@ -110,7 +108,7 @@ public class Reports {
 
     @Override
     public String toString() {
-        return "Reports{" +
+        return "Report{" +
                 "reportId=" + reportId +
                 ", userId=" + userId +
                 ", cafeId=" + cafeId +

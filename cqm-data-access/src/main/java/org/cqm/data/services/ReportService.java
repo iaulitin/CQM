@@ -1,6 +1,6 @@
 package org.cqm.data.services;
 
-import org.cqm.data.repositories.ReportsRepository;
+import org.cqm.data.repositories.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class ReportsService {
+public class ReportService {
     @Autowired
-    ReportsRepository reportsRepository;
+    ReportRepository reportRepository;
 
-    public ReportsRepository getReportsRepository() {
-        return this.reportsRepository;
+    public ReportRepository getReportRepository() {
+        return this.reportRepository;
     }
 }

@@ -16,6 +16,8 @@
         <hibernate-core-version>5.2.2.Final</hibernate-core-version>
     </properties>
 
+
+
     <modules>
         <module>cqm-web</module>
         <module>cqm-ejb</module>
