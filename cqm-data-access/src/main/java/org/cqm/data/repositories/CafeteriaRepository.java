@@ -10,6 +10,9 @@ import java.util.List;
 
 @Repository
 public interface CafeteriaRepository extends CrudRepository<Cafeteria, Integer> {
+
     @Query("select c from Cafeteria c where c.cafeName = :cafeName")
     List<String> findByCafeName(@Param("cafeName") String cafeName);
+
+
 }

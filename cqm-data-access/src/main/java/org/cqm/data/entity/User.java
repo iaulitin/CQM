@@ -171,6 +171,3 @@ public class User {
         return result;
     }
 }
-
-
-

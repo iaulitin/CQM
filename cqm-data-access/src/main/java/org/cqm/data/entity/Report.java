@@ -10,7 +10,8 @@ import java.util.Date;
 public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
-    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence", initialValue = 1)
+    @Column(name = "report_id")
     private Integer reportId;
 
     @Column (name = "user_id")

@@ -8,7 +8,8 @@ import javax.persistence.*;
 public class Cafeteria {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
-    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence", initialValue = 1)
+    @Column(name = "cafe_id")
     private Integer cafeId;
 
     @Column(name = "name")
