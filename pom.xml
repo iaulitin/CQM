@@ -10,12 +10,26 @@
     <packaging>pom</packaging>
 
     <properties>
+        <!--Here go dependencies for the data-access module-->
         <org.springframework.version>4.3.0.RELEASE</org.springframework.version>
-        <javax.ejb>3.0</javax.ejb>
+        <org.springframework.data.version>1.10.2.RELEASE</org.springframework.data.version>
         <org.hibernate.javax.persistence.version>1.0.0.Final</org.hibernate.javax.persistence.version>
         <hibernate-core-version>5.2.2.Final</hibernate-core-version>
-    </properties>
+        <org.postgresql.version>9.4.1211.jre7</org.postgresql.version>
 
+        <!--Here go dependencies for the ear module-->
+        <com.google.guava.version>r05</com.google.guava.version>
+        <javax.persistence.version>1.0.2</javax.persistence.version>
+        <log4j.version>1.2.17</log4j.version>
+
+        <!--Here go dependencies for the ejb module-->
+        <javax.ejb.version>3.0</javax.ejb.version>
+
+        <!--Here go dependencies for the web module-->
+        <jstl.version>1.2</jstl.version>
+        <javax.servlet.version>3.1.0</javax.servlet.version>
+        <org.wildfly.plugins.version>1.1.0.Alpha5</org.wildfly.plugins.version>
+    </properties>
 
 
     <modules>
