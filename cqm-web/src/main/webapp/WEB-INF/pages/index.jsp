@@ -2,9 +2,9 @@
 <% response.setStatus( 403 ); %>
 <html>
 <head>
-    <title>hew</title>
+    <title>The main page</title>
 </head>
 <body>
-<b>hooray</b>
+    <h1>Here goes some text: ${message}.</h1>
 </body>
 </html>

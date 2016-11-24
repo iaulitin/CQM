@@ -5,11 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * Created by Anastasia on 12.11.2016.
- */
 @Controller
-//@RequestMapping("/app")
 public class UserController {
 
     @RequestMapping("/")

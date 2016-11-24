@@ -24,6 +24,7 @@ public class Tester {
         UserRepository repository = context.getBean(UserRepository.class);
 
         User user1 = new User();
+        user1.setUserId(40);
         user1.setFirstName("Dmitry");
         user1.setLastName("Vorobyev");
         user1.setUserEmail("vorobiev.dima@yandex.ru");
@@ -34,6 +35,7 @@ public class Tester {
         user1.setUserRating(1);
 
         User user2 = new User();
+        user2.setUserId(50);
         user2.setFirstName("Ilya");
         user2.setLastName("Ulitin");
         user2.setUserEmail("iaulitin@yandex.ru");
