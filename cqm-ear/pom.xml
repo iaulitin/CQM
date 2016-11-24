@@ -9,7 +9,6 @@
         <artifactId>cqm</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
     <artifactId>cqm-ear</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>ear</packaging>
@@ -33,14 +32,14 @@
                         <!--<groupId>${project.groupId}</groupId>-->
                         <!--<artifactId>auction-ejb</artifactId>-->
                         <!--</ejbModule>-->
-                        <jarModule>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>cqm-data-access</artifactId>
-                        </jarModule>
-                        <jarModule>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>cqm-application</artifactId>
-                        </jarModule>
+                        <!--<jarModule>-->
+                            <!--<groupId>${project.groupId}</groupId>-->
+                            <!--<artifactId>cqm-data-access</artifactId>-->
+                        <!--</jarModule>-->
+                        <!--<jarModule>-->
+                            <!--<groupId>${project.groupId}</groupId>-->
+                            <!--<artifactId>cqm-application</artifactId>-->
+                        <!--</jarModule>-->
                     </modules>
                     <skinnyWars>true</skinnyWars>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
@@ -51,19 +50,19 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>cqm-data-access</artifactId>
-            <version>${project.parent.version}</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>cqm-application</artifactId>
-            <version>${project.parent.version}</version>
-            <type>jar</type>
-        </dependency>
         <!--<dependency>-->
+            <!--<groupId>${project.groupId}</groupId>-->
+            <!--<artifactId>cqm-data-access</artifactId>-->
+            <!--<version>${project.parent.version}</version>-->
+            <!--<type>jar</type>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>${project.groupId}</groupId>-->
+            <!--<artifactId>cqm-application</artifactId>-->
+            <!--<version>${project.parent.version}</version>-->
+            <!--<type>jar</type>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
         <!--<groupId>${project.groupId}</groupId>-->
         <!--<artifactId>auction-ejb</artifactId>-->
         <!--<version>${project.parent.version}</version>-->

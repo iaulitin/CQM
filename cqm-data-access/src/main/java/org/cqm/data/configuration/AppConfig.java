@@ -1,8 +1,5 @@
 package org.cqm.data.configuration;
 
-/**
- * Created by Dmitriy on 08.11.2016.
- */
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

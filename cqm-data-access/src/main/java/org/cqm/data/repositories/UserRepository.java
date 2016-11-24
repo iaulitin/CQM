@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Dmitriy on 08.11.2016.
- */
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
     @Query("select u from User u where u.lastName = :lastName")

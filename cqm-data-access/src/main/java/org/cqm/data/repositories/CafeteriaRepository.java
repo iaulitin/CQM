@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Dmitriy on 08.11.2016.
- */
 @Repository
 public interface CafeteriaRepository extends CrudRepository<Cafeteria, Integer> {
     @Query("select c from Cafeteria c where c.cafeName = :cafeName")

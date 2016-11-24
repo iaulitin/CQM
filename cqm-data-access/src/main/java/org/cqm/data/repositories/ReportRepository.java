@@ -8,10 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Dmitriy on 08.11.2016.
- */
-
 @Repository
 public interface ReportRepository extends CrudRepository<Report, Integer> {
     @Query("select r from Report r where r.load = :load")

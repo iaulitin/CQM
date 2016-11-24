@@ -19,11 +19,11 @@
 
 
     <modules>
-        <module>cqm-ear</module>
-        <module>cqm-ejb</module>
         <module>cqm-data-access</module>
-        <module>cqm-web</module>
         <module>cqm-application</module>
+        <module>cqm-ejb</module>
+        <module>cqm-web</module>
+        <module>cqm-ear</module>
     </modules>
 
 

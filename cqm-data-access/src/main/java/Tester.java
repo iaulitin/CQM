@@ -6,10 +6,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.List;
 
 /**
- * Created by Dmitriy on 08.11.2016.
- */
-
-/**
  * Use ApplicationContext for the permission of dependencies
  */
 

@@ -8,11 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/index")
 public class IndexController {
-
-
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, path = "/index")
     public String printHello(ModelMap model) {
         model.addAttribute("message", "123");
         return "index";
