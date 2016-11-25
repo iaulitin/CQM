@@ -12,8 +12,9 @@
 <p>Hello, ${user}</p>
 <%
     class User {
-        public String name;
+        public String name = "321";
         public BigInteger id;
+
     }
 %>
 

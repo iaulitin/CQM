@@ -23,5 +23,4 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     @Query("select u from User u where u.userLogin = :userLogin")
     List<String> findByLogin(@Param("userLogin") String userLogin);
 
-
 }

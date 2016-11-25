@@ -14,7 +14,7 @@ public class UserController {
         return "home";
     }
 
-    @RequestMapping("/user")
+    @RequestMapping(value = "/user")
     public String user(@RequestParam(value = "name") String name, Model model) {
         model.addAttribute("user", name);
         return "user";

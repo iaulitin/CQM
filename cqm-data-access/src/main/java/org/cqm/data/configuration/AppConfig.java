@@ -21,10 +21,10 @@ import javax.sql.DataSource;
  * Configuration class of Spring IoC container
  */
 @Configuration
-@ComponentScan(basePackages = "org.cqm.data.configuration")
+@ComponentScan(basePackages = "org.cqm.data")
 @PropertySource(value = {"classpath:META-INF/application.properties"})
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "org.cqm.data")
+
 public class AppConfig {
 
     @Value("${jdbc.driverClassName}")
