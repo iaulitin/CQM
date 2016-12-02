@@ -5,7 +5,7 @@
 <%@ page session="false"%>
 <html>
 <head>
-    <title>Manage User</title>
+    <title>Manage Cafeteria</title>
     <style type="text/css">
         .tg {
             border-collapse: collapse;
@@ -46,36 +46,23 @@
     </style>
 </head>
 <body>
-<h3>User List</h3>
+<h3>Cafeteria List</h3>
 <table class="tg">
     <tr>
         <th width="80">ID</th>
-        <th width="120">FirstName</th>
-        <th width="120">LastName</th>
-        <th width="60">Login</th>
-        <th width="60">Email</th>
-        <th width="60">Hash</th>
-        <th width="60">Salt</th>
-        <th width="60">Rating</th>
-        <th width="60">IsAdmin</th>
+        <th width="120">CafeName</th>
+        <th width="120">Address</th>
     </tr>
-    <c:if test="${!empty users}">
-    <c:forEach items="${users}" var="user">
-    <tr>
-        <td><c:out value="${user.userId}"/></td>
-        <td><c:out value="${user.firstName}"/></td>
-        <td><c:out value="${user.lastName}"/></td>
-        <td><c:out value="${user.userLogin}"/></td>
-        <td><c:out value="${user.userEmail}"/></td>
-        <td><c:out value="${user.hashPassword}"/></td>
-        <td><c:out value="${user.saltPassword}"/></td>
-        <td><c:out value="${user.userRating}"/></td>
-        <td><c:out value="${user.isAdmin}"/></td>
-    </tr>
-    </c:forEach>
+    <c:if test="${!empty cafeterias}">
+        <c:forEach items="${cafeterias}" var="cafeteria">
+            <tr>
+                <td><c:out value="${cafeteria.cafeId}"/></td>
+                <td><c:out value="${cafeteria.cafeName}"/></td>
+                <td><c:out value="${cafeteria.cafeAddress}"/></td>
+            </tr>
+        </c:forEach>
     </c:if>
 </table>
 
 </body>
 </html>
-

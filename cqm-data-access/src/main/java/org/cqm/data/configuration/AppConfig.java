@@ -30,26 +30,26 @@ import javax.sql.DataSource;
 
 public class AppConfig {
 
-//    @Value("${jdbc.driverClassName}")
-//    private String driverClassName;
-//
-//    @Value("${jdbc.url}")
-//    private String url;
-//
-//    @Value("${jdbc.username}")
-//    private String userName;
-//
-//    @Value("${jdbc.password}")
-//    private String password;
+    @Value("${jdbc.driverClassName}")
+    private String driverClassName;
+
+    @Value("${jdbc.url}")
+    private String url;
+
+    @Value("${jdbc.username}")
+    private String userName;
+
+    @Value("${jdbc.password}")
+    private String password;
 
     @Bean
     public DataSource dataSource() {
         //Connection pool
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("89061361420");
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(url);
+        dataSource.setUsername(userName);
+        dataSource.setPassword(password);
         return dataSource;
     }
 
