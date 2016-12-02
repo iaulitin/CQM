@@ -100,6 +100,24 @@
             <artifactId>wildfly-maven-plugin</artifactId>
             <version>${org.wildfly.plugins.version}</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cqm-data-access</artifactId>
+            <version>${project.parent.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 </project>

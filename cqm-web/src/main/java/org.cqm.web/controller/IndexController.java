@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
     @RequestMapping(value = "index")
-    public String printHello(ModelMap model) {
+    public String printIndex(ModelMap model) {
         //ModelAndView
         model.addAttribute("message", "123");
         return "index";

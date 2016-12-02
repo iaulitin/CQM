@@ -6,11 +6,11 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Reports")
-@NamedQuery(name = "Report.getAll", query = "select r from Report r")
+@NamedQuery(name = "Reports.getAll", query = "select r from Report r")
 public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
-    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence", initialValue = 1)
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
     @Column(name = "report_id")
     private Integer reportId;
 

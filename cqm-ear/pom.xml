@@ -32,10 +32,10 @@
                         <!--<groupId>${project.groupId}</groupId>-->
                         <!--<artifactId>auction-ejb</artifactId>-->
                         <!--</ejbModule>-->
-                        <!--<jarModule>-->
-                            <!--<groupId>${project.groupId}</groupId>-->
-                            <!--<artifactId>cqm-data-access</artifactId>-->
-                        <!--</jarModule>-->
+                        <jarModule>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>cqm-data-access</artifactId>
+                        </jarModule>
                         <!--<jarModule>-->
                             <!--<groupId>${project.groupId}</groupId>-->
                             <!--<artifactId>cqm-application</artifactId>-->
@@ -50,12 +50,12 @@
 
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>${project.groupId}</groupId>-->
-            <!--<artifactId>cqm-data-access</artifactId>-->
-            <!--<version>${project.parent.version}</version>-->
-            <!--<type>jar</type>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cqm-data-access</artifactId>
+            <version>${project.parent.version}</version>
+            <type>jar</type>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>${project.groupId}</groupId>-->
             <!--<artifactId>cqm-application</artifactId>-->
@@ -149,6 +149,14 @@
             <version>${log4j.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cqm-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
     </dependencies>
     
 </project>

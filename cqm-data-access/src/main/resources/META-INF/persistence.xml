@@ -6,12 +6,15 @@
              version="1.0">
     <persistence-unit name="cqmProject" transaction-type="RESOURCE_LOCAL">
         <!--<provider>org.hibernate.ejb.HibernatePersistence</provider>-->
+        <class>org.cqm.data.entity.Cafeteria</class>
+        <class>org.cqm.data.entity.Report</class>
+        <class>org.cqm.data.entity.User</class>
         <properties>
             <!--driver which we'll use in our work-->
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
             <property name="hibernate.connection.username" value="postgres"/>
-            <property name="hibernate.connection.password" value="qwe123"/>
+            <property name="hibernate.connection.password" value="89061361420"/>
             <!--here is the status of the JPA's work-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>

@@ -24,29 +24,32 @@ import javax.sql.DataSource;
 @ComponentScan(basePackages = "org.cqm.data")
 @PropertySource(value = {"classpath:META-INF/application.properties"})
 @EnableTransactionManagement
+@EnableJpaRepositories(
+        entityManagerFactoryRef = "entityManagerFactory",
+        basePackages = { "org.cqm.data.repositories"})
 
 public class AppConfig {
 
-    @Value("${jdbc.driverClassName}")
-    private String driverClassName;
-
-    @Value("${jdbc.url}")
-    private String url;
-
-    @Value("${jdbc.username}")
-    private String userName;
-
-    @Value("${jdbc.password}")
-    private String password;
+//    @Value("${jdbc.driverClassName}")
+//    private String driverClassName;
+//
+//    @Value("${jdbc.url}")
+//    private String url;
+//
+//    @Value("${jdbc.username}")
+//    private String userName;
+//
+//    @Value("${jdbc.password}")
+//    private String password;
 
     @Bean
     public DataSource dataSource() {
         //Connection pool
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(driverClassName);
-        dataSource.setUrl(url);
-        dataSource.setUsername(userName);
-        dataSource.setPassword(password);
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("89061361420");
         return dataSource;
     }
 
@@ -65,7 +68,7 @@ public class AppConfig {
         return vendorAdapter;
     }
 
-    @Bean
+    @Bean (name = "entityManagerFactory")
     protected LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(jpaVendorAdapter());
