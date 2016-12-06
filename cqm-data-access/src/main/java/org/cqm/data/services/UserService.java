@@ -1,5 +1,6 @@
 package org.cqm.data.services;
 
+import org.cqm.data.entity.User;
 import org.cqm.data.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

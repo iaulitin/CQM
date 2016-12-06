@@ -1,17 +1,39 @@
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% response.setStatus( 403 ); %>
 <html>
 <head>
-    <title>The main page</title>
-    <spring:url value="resources/css/bootstrap.css" var="bootstrap"/>
-    <spring:url value="/resources/css/bootstrap-theme.css" var="bootstrap_theme"/>
-    <spring:url value="resources/js/bootstrap.js" var="bootstrap_jsp"/>.
-    <link href="${bootstrap}" rel="stylesheet"/>
-    <link href="${bootstrap_theme}" rel="stylesheet"/>
-    <link href="${bootstrap_jsp}" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Main Page</title>
+
+    <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/jumbotron-narrow.css" />" rel="stylesheet">
 </head>
 <body>
-    <h1>Here goes some text: ${message}.</h1>
+    <div class="container">
+        <div class="jumbotron" style="margin-top: 20px;">
+            <h1>Cafeteria Queues Monitoring</h1>
+            <p class="lead">
+                Cafeteria Queues Monitoring is service which provide statistics of visit in MIPT's cafeterias in real time.
+            </p>
+            <sec:authorize access="!isAuthenticated()">
+                <p><a class="btn btn-lg btn-success" href="<c:url value="/login" />"role="button">Log In</a></p>
+            </sec:authorize>
+            <sec:authorize access="isAuthenticated()">
+                <p>Username: <sec:authentication property="principal.username" /></p>
+                <p><a class="btn btn-lg btn-danger" href="<c:url value="/logout" />" role="button">Log Out</a></p>
+            </sec:authorize>
+        </div>
+        <div class="footer">
+             <p>@ NetCracker project 2016</p>
+        </div>
+    </div>
+
 </body>
 </html>
