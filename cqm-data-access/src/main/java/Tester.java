@@ -21,7 +21,7 @@ public class Tester {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         UserRepository userRepository = context.getBean(UserRepository.class);
 
-        User user1 = new User();
+     /*   User user1 = new User();
         user1.setFirstName("Dmitry");
         user1.setLastName("Vorobyev");
         user1.setUserEmail("vorobiev.dima@yandex.ru");
@@ -45,7 +45,7 @@ public class Tester {
         userRepository.save(user2);
 
         List<User> listUsers = userRepository.findAllByOrderByUserIdAsc();
-        System.out.println(listUsers);
+        System.out.println(listUsers);*/
 
         CafeteriaRepository cafeteriaRepository = context.getBean(CafeteriaRepository.class);
 

@@ -3,9 +3,11 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="false"%>
+
 <html>
 <head>
     <title>Manage Cafeteria</title>
+    <link rel='stylesheet' href="css\bootstrap.min.css" type='text/css' media='all'>
     <style type="text/css">
         .tg {
             border-collapse: collapse;
