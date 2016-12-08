@@ -170,4 +170,6 @@ public class User {
         //result = 31 * result + (isAdmin ? 1 : 0);
         return result;
     }
+
+
 }

@@ -1,7 +1,7 @@
 package org.cqm.web.config;
 
-import org.cqm.data.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,69 +14,58 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
- * Created by Dmitriy on 06.12.2016.
+ * Created by Dmitriy on 08.12.2016.
  */
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
-
-//    @Autowired
-//    private UserDetailsServiceImpl userDetailsService;
-//
-//    //регистрируем нашу реализацию UserService
-//    //а также PasswordEncoder для приведения пароля в формат SHA1
-//    @Autowired
-//    public void registerGlobalAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-//        auth
-//                .userDetailsService(userDetailsService)
-//                .passwordEncoder(getShaPasswordEncoder());
-//    }
+@ComponentScan("org.cqm.web.details")
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
-        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
-        auth.inMemoryAuthentication().withUser("superadmin").password("superadmin").roles("SUPERADMIN");
+    @Qualifier("userDetailsService")
+    UserDetailsService userDetailsService;
+
+    // register UserDetailsService
+    // PasswordEncoder for SHA1
+    @Autowired
+    public void registerGlobalAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(userDetailsService)
+                .passwordEncoder(getShaPasswordEncoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        //включаем защиту от CSRF атак
+        // against CSRF attacks
         http.csrf()
                 .disable()
-                //указываем правила запросов
-                //по которым будет опрделятся доступ к ресурсам и остальным данным
                 .authorizeRequests()
                 .antMatchers("/resources/**", "/**").permitAll()
                 .anyRequest().permitAll()
                 .and();
+
         http.formLogin()
-                //указываем страницу с формой логина
+                // login page
                 .loginPage("/login")
-                //указываем action с формы логина
+                // login form action
                 .loginProcessingUrl("/j_spring_security_check")
-                //указываем url при неудачном логине
                 .failureUrl("/login?error")
-                //Указываем параметры логина и пароля с формы логина
                 .usernameParameter("j_username")
                 .passwordParameter("j_password")
-                //дает доступ к форме логина всем
                 .permitAll();
+
         http.logout()
-                //разрешаем делать логаут всем
                 .permitAll()
-                //указываем url логаута
                 .logoutUrl("/logout")
-                //указываем url при неудачном логауте
                 .logoutSuccessUrl("/login?logout")
-                //делаем невалидной текущую сессию
                 .invalidateHttpSession(true);
+
     }
 
     @Bean
-    public ShaPasswordEncoder getShaPasswordEncoder() {
+    public ShaPasswordEncoder getShaPasswordEncoder(){
         return new ShaPasswordEncoder();
     }
 }

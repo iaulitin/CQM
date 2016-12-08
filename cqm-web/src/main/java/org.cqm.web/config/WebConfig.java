@@ -2,6 +2,7 @@ package org.cqm.web.config;
 
 import org.cqm.data.repositories.UserRepository;
 import org.cqm.data.services.UserService;
+import org.cqm.web.config.details.MyUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -36,4 +37,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
+    @Bean
+    public UserDetailsService getUserDetailsService(){
+        return new MyUserDetailsService();
+    }
 }

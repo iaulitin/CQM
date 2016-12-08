@@ -49,28 +49,33 @@ public class Tester {
 
         CafeteriaRepository cafeteriaRepository = context.getBean(CafeteriaRepository.class);
 
-        Cafeteria cafeteria1 = new Cafeteria();
-        cafeteria1.setCafeName("КСП");
-        cafeteria1.setCafeAddress("Россия, Московская область, Долгопрудный, Первомайская улица, 7");
+//        Cafeteria cafeteria1 = new Cafeteria();
+//        cafeteria1.setCafeName("КСП");
+//        cafeteria1.setCafeAddress("Россия, Московская область, Долгопрудный, Первомайская улица, 7");
+//
+//        Cafeteria cafeteria2 = new Cafeteria();
+//        cafeteria2.setCafeName("Veryfood ГК");
+//        cafeteria2.setCafeAddress("Россия, Московская область, Долгопрудный, Институтский переулок, 9");
+//
+//        Cafeteria cafeteria3 = new Cafeteria();
+//        cafeteria3.setCafeName("Veryfood НК");
+//        cafeteria3.setCafeAddress("Россия, Московская область, Долгопрудный, Институтский переулок, 9");
+//
+//        Cafeteria cafeteria4 = new Cafeteria();
+//        cafeteria4.setCafeName("Veryfood КПМ");
+//        cafeteria4.setCafeAddress("Россия, Московская область, Долгопрудный, Институтский переулок, 9");
+//
+//        cafeteriaRepository.save(cafeteria1);
+//        cafeteriaRepository.save(cafeteria2);
+//        cafeteriaRepository.save(cafeteria3);
+//        cafeteriaRepository.save(cafeteria4);
 
-        Cafeteria cafeteria2 = new Cafeteria();
-        cafeteria2.setCafeName("Veryfood ГК");
-        cafeteria2.setCafeAddress("Россия, Московская область, Долгопрудный, Институтский переулок, 9");
+//        List<Cafeteria> listCafeterias = cafeteriaRepository.findAllByOrderByCafeIdAsc();
+//        System.out.println(listCafeterias);
+//        List<User> oneUser = userRepository.findByLastName("Vorobyev");
+//        System.out.println(oneUser);
 
-        Cafeteria cafeteria3 = new Cafeteria();
-        cafeteria3.setCafeName("Veryfood НК");
-        cafeteria3.setCafeAddress("Россия, Московская область, Долгопрудный, Институтский переулок, 9");
-
-        Cafeteria cafeteria4 = new Cafeteria();
-        cafeteria4.setCafeName("Veryfood КПМ");
-        cafeteria4.setCafeAddress("Россия, Московская область, Долгопрудный, Институтский переулок, 9");
-
-        cafeteriaRepository.save(cafeteria1);
-        cafeteriaRepository.save(cafeteria2);
-        cafeteriaRepository.save(cafeteria3);
-        cafeteriaRepository.save(cafeteria4);
-
-        List<Cafeteria> listCafeterias = cafeteriaRepository.findAllByOrderByCafeIdAsc();
-        System.out.println(listCafeterias);
+        List<User> user = userRepository.findByLogin("teaset");
+        System.out.println(user);
     }
 }
