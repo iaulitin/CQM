@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created by Dmitriy on 02.12.2016.
- */
 @Controller
 public class CafeteriaController {
 

@@ -19,7 +19,6 @@
             <artifactId>ejb-api</artifactId>
             <version>${javax.ejb.version}</version>
         </dependency>
-
     </dependencies>
 
     

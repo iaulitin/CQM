@@ -30,7 +30,7 @@
                         </webModule>
                         <!--<ejbModule>-->
                         <!--<groupId>${project.groupId}</groupId>-->
-                        <!--<artifactId>auction-ejb</artifactId>-->
+                        <!--<artifactId>cqm-ejb</artifactId>-->
                         <!--</ejbModule>-->
                         <jarModule>
                             <groupId>${project.groupId}</groupId>
@@ -62,9 +62,9 @@
             <!--<version>${project.parent.version}</version>-->
             <!--<type>jar</type>-->
         <!--</dependency>-->
-        <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
+        <!--<dependency>-->
         <!--<groupId>${project.groupId}</groupId>-->
-        <!--<artifactId>auction-ejb</artifactId>-->
+        <!--<artifactId>cqm-ejb</artifactId>-->
         <!--<version>${project.parent.version}</version>-->
         <!--<type>ejb</type>-->
         <!--</dependency>-->
@@ -136,12 +136,6 @@
         <!--<artifactId>validation-api</artifactId>-->
         <!--<version>1.0.0.GA</version>-->
         <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.eclipse.persistence</groupId>-->
-            <!--<artifactId>eclipselink</artifactId>-->
-            <!--<version>${org.eclipse.persistence.version}</version>-->
-            <!--<scope>provided</scope>-->
         <!--</dependency>-->
         <dependency>
             <groupId>log4j</groupId>

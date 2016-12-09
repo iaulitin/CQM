@@ -5,8 +5,7 @@
                                  http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
              version="1.0">
     <persistence-unit name="cqmProject" transaction-type="RESOURCE_LOCAL">
-        <!--<provider>org.hibernate.ejb.HibernatePersistence</provider>-->
-        <!--<jta-data-source>java:jboss/datasources/PostgreDataSource</jta-data-source>-->
+
         <class>org.cqm.data.entity.Cafeteria</class>
         <class>org.cqm.data.entity.Report</class>
         <class>org.cqm.data.entity.User</class>
@@ -15,7 +14,7 @@
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
             <property name="hibernate.connection.username" value="postgres"/>
-            <property name="hibernate.connection.password" value="89061361420"/>
+            <property name="hibernate.connection.password" value="qwe123"/>
             <!--here is the status of the JPA's work-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>

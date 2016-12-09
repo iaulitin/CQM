@@ -18,7 +18,6 @@
         <org.postgresql.version>9.4.1211.jre7</org.postgresql.version>
 
         <!--Here go dependencies for the ear module-->
-        <com.google.guava.version>r05</com.google.guava.version>
         <javax.persistence.version>1.0.2</javax.persistence.version>
         <log4j.version>1.2.17</log4j.version>
 

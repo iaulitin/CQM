@@ -13,10 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Dmitriy on 08.12.2016.
- */
-
 @Service("userDetailsService")
 public class MyUserDetailsService implements UserDetailsService {
 

@@ -8,20 +8,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Log In</title>
+    <title>CQM | Log In</title>
 
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/css/signin.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/signin.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/jumbotron-narrow.css" />" rel="stylesheet">
 </head>
 <body>
-    <div class="container" style="width: 300px;">
+<div class="container">
+    <div class="jumbotron" style="margin-top: 20px;">
         <c:url value="/j_spring_security_check" var="loginUrl"/>
         <form action="${loginUrl}" method="post">
             <h2 class="form-signin-heading">Please sign in</h2>
-            <input type="text" class="form-control" name="j_username" placeholder="User login" required autofocus value="user">
-            <input type="password" class="form-control" name="j_password" placeholder="Password" required value="12345678">
+            <input type="text" class="form-control" name="j_username" placeholder="User login" required autofocus
+                   value="user">
+            <input type="password" class="form-control" name="j_password" placeholder="Password" required
+                   value="12345678">
             <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
         </form>
+        <div class="footer">
+            <p>@ NetCracker student project 2016</p>
+        </div>
     </div>
+</div>
 </body>
 </html>

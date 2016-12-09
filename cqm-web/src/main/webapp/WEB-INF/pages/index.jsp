@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Main Page</title>
+    <title>CQM | Main page</title>
 
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/jumbotron-narrow.css" />" rel="stylesheet">
@@ -24,7 +24,7 @@
         <div class="jumbotron" style="margin-top: 20px;">
             <h1>Cafeteria Queues Monitoring</h1>
             <p class="lead">
-                Cafeteria Queues Monitoring is a service which provide statistics of visit in MIPT's cafeterias in real time.
+                Cafeteria Queues Monitoring is a service providing user with statistics of MIPT's cafeterias visits in real time.
             </p>
             <sec:authorize access="!isAuthenticated()">
                 <p><a class="btn btn-lg btn-success" href="<c:url value="/login" />" role="button">Log In</a></p>
@@ -33,11 +33,10 @@
                 <p>Username: <sec:authentication property="principal.username" /></p>
                 <p><a class="btn btn-lg btn-danger" href="<c:url value="/logout" />" role="button">Log Out</a></p>
             </sec:authorize>
-        </div>
-        <div class="footer">
-             <p>@ NetCracker project 2016</p>
+            <div class="footer">
+                <p>@ NetCracker student project 2016</p>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
