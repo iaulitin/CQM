@@ -47,8 +47,6 @@ public class Tester {
         List<User> listUsers = userRepository.findAllByOrderByUserIdAsc();
         System.out.println(listUsers);*/
 
-      CafeteriaRepository cafeteriaRepository = context.getBean(CafeteriaRepository.class);
-
 //        Cafeteria cafeteria1 = new Cafeteria();
 //        cafeteria1.setCafeName("КСП");
 //        cafeteria1.setCafeAddress("Россия, Московская область, Долгопрудный, Первомайская улица, 7");

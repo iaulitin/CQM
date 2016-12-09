@@ -25,5 +25,4 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Query("select u from User u order by u.userId asc")
     List<User> findAllByOrderByUserIdAsc();
-
 }

@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service("userService")
 public class UserService {
+
     @Autowired
     UserRepository userRepository;
 
     public UserRepository getUserRepository() {
         return this.userRepository;
     }
-
 }

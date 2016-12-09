@@ -6,13 +6,14 @@ import javax.persistence.*;
 @Table(name = "Users")
 @NamedQuery(name = "Users.getAll", query = "select c from User c")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
     @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
     @Column(name = "user_id")
     private Integer userId;
 
-    @Column (name = "first_name")
+    @Column(name = "first_name")
     private String firstName;
 
     @Column(name = "last_name")

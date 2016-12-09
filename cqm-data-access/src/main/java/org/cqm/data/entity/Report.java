@@ -1,29 +1,30 @@
 package org.cqm.data.entity;
 
 
-import  javax.persistence.*;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "Reports")
 @NamedQuery(name = "Reports.getAll", query = "select r from Report r")
 public class Report {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
     @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
     @Column(name = "report_id")
     private Integer reportId;
 
-    @Column (name = "user_id")
+    @Column(name = "user_id")
     private Integer userId;
 
-    @Column (name = "cafe_id")
+    @Column(name = "cafe_id")
     private Integer cafeId;
 
-    @Column (name = "load")
+    @Column(name = "load")
     private Integer load;
 
-    @Column (name = "date")
+    @Column(name = "date")
     @Temporal(TemporalType.DATE)
     private Date date;
 

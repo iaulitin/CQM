@@ -26,7 +26,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactory",
-        basePackages = { "org.cqm.data.repositories"})
+        basePackages = {"org.cqm.data.repositories"})
 
 public class AppConfig {
 
@@ -68,7 +68,7 @@ public class AppConfig {
         return vendorAdapter;
     }
 
-    @Bean (name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactory")
     protected LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(jpaVendorAdapter());
@@ -86,5 +86,4 @@ public class AppConfig {
         transactionManager.setPersistenceUnitName(entityManagerFactory().getPersistenceUnitName());
         return transactionManager;
     }
-
 }

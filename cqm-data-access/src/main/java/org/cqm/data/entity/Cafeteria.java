@@ -3,9 +3,10 @@ package org.cqm.data.entity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "Cafeterias")
+@Table(name = "Cafeterias")
 @NamedQuery(name = "Cafeterias.getAll", query = "select c from Cafeteria c")
 public class Cafeteria {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
     @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "cqm_id_sequence")
@@ -15,7 +16,7 @@ public class Cafeteria {
     @Column(name = "name")
     private String cafeName;
 
-    @Column (name = "address")
+    @Column(name = "address")
     private String cafeAddress;
 
     public Cafeteria(Integer cafeId, String cafeName, String cafeAddress) {
