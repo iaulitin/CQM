@@ -2,6 +2,7 @@ package org.cqm.web.config.details;
 
 import org.cqm.data.entity.enums.UserRoleEnum;
 import org.cqm.data.repositories.UserRepository;
+import org.cqm.data.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,13 +19,15 @@ public class MyUserDetailsService implements UserDetailsService {
 
     //get user from database
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
+
+    public int userRating = 0;
 
     @Override
     public UserDetails loadUserByUsername(String userLogin) throws UsernameNotFoundException {
 
         //get user via our repository
-        org.cqm.data.entity.User user = (org.cqm.data.entity.User) userRepository.findByLogin(userLogin);
+        org.cqm.data.entity.User user = userService.findUserByLogin(userLogin);
 
         //set roles
         Set<GrantedAuthority> roles = new HashSet<>();
@@ -32,6 +35,8 @@ public class MyUserDetailsService implements UserDetailsService {
 
         //check login and password
         UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getUserLogin(), user.getHashPassword(), roles);
+
+        userRating = user.getUserRating();
 
         return userDetails;
     }

@@ -18,5 +18,8 @@ public interface ReportRepository extends CrudRepository<Report, Integer> {
     List<Integer> findByLoad(@Param("load") Integer load);
 
     @Query("select r from Report r where (current_date - date) < :time")
-    List<Date> findFreshestReports(@Param("time") Date time);
+    List<Report> findFreshestReports(@Param("time") Date time);
+
+    @Query("select r from Report r  order by date desc")
+    List<Report> findAllReportsOrderByDateDesc();
 }

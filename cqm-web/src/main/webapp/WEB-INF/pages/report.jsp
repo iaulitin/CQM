@@ -14,39 +14,12 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>CQM | Столовые</title>
+        <title>CQM | Отчеты</title>
 
         <link href="<c:url value="/resources/css/site-style.css" />" rel="stylesheet">
     </head>
     <body>
     <div class="CafeContent">
-        <c:if test="${!empty cafeterias}">
-        <c:forEach items="${cafeterias}" var="cafeteria">
-        <table width="98%" align="center" class="CafeTable">
-            <tr>
-                <th width="35%"></th>
-                <th width="40%"></th>
-                <th width="25%"></th>
-            </tr>
-            <tr>
-                <td height="200px">
-                    <div class="CafePhoto">Место для Вашей фотографии</div>
-                </td>
-                <td>
-                    <div class="CafeName"><c:out value="${cafeteria.cafeName}"/></div>
-                </td>
-                <td rowspan="2">
-                    <div class="CafeLoad">Место для Вашей оценки загруженности</div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <div class="CafeAddress"><c:out value="${cafeteria.cafeAddress}"/></div>
-                </td>
-            </tr>
-            </c:forEach>
-            </c:if>
-        </table>
     </div>
     <div class="PageMenu">
         Вы зашли под именем <sec:authentication property="principal.username"/>
@@ -65,6 +38,7 @@
         <a href="<c:url value="/logout"/>">
             <div class="MenuButton"> Выход</div>
         </a>
+        </p>
     </div>
     </body>
 </sec:authorize>

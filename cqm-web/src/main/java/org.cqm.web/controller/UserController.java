@@ -1,13 +1,9 @@
 package org.cqm.web.controller;
 
 import org.cqm.data.entity.User;
-import org.cqm.data.repositories.UserRepository;
 import org.cqm.data.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
@@ -21,7 +17,7 @@ public class UserController {
 
     @RequestMapping(value = "/users")
     public String listUsers(Model model) {
-        List<User> users = userService.getUserRepository().findAllByOrderByUserIdAsc();
+        List<User> users = userService.getUserRepository().findAllUsersOrderByRatingDesc();
         model.addAttribute("users", users);
         return "user";
     }

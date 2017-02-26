@@ -17,7 +17,7 @@ public class CafeteriaController {
 
     @RequestMapping(value = "/cafeterias")
     public String listCafeterias(Model model) {
-        List<Cafeteria> cafeterias = cafeteriaService.getCafeteriaRepository().findAllByOrderByCafeIdAsc();
+        List<Cafeteria> cafeterias = cafeteriaService.getCafeteriaRepository().findAllCafeteriasOrderByCafeIdAsc();
         model.addAttribute("cafeterias", cafeterias);
         return "cafeteria";
     }

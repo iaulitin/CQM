@@ -16,5 +16,5 @@ public interface CafeteriaRepository extends CrudRepository<Cafeteria, Integer> 
     List<String> findByCafeName(@Param("cafeName") String cafeName);
 
     @Query("select c from Cafeteria c order by c.cafeId")
-    List<Cafeteria> findAllByOrderByCafeIdAsc();
+    List<Cafeteria> findAllCafeteriasOrderByCafeIdAsc();
 }

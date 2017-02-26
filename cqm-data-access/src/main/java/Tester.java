@@ -44,7 +44,7 @@ public class Tester {
         userRepository.save(user1);
         userRepository.save(user2);
 
-        List<User> listUsers = userRepository.findAllByOrderByUserIdAsc();
+        List<User> listUsers = userRepository.findAllUserOrderByIdAsc();
         System.out.println(listUsers);*/
 
 //        Cafeteria cafeteria1 = new Cafeteria();
@@ -68,7 +68,7 @@ public class Tester {
 //        cafeteriaRepository.save(cafeteria3);
 //        cafeteriaRepository.save(cafeteria4);
 
-//        List<Cafeteria> listCafeterias = cafeteriaRepository.findAllByOrderByCafeIdAsc();
+//        List<Cafeteria> listCafeterias = cafeteriaRepository.findAllCafeteriasOrderByCafeIdAsc();
 //        System.out.println(listCafeterias);
 //        List<User> oneUser = userRepository.findByLastName("Vorobyev");
 //        System.out.println(oneUser);
