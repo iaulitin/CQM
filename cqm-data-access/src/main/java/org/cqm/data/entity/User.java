@@ -13,107 +13,71 @@ public class User {
     @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
     @Column(name = "login")
-    private String userLogin;
+    private String login;
 
     @Column(name = "email")
-    private String userEmail;
+    private String email;
 
-    @Column(name = "hash")
-    private String hashPassword;
-
-    @Column(name = "salt")
-    private String saltPassword;
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "rating")
-    private int userRating;
+    private Integer rating;
 
-    @Column(name = "isAdmin")
+    @Column(name = "is_admin")
     private boolean isAdmin;
 
-    public User(Integer userId, String firstName, String lastName, String userLogin, String userEmail, String hashPassword, String saltPassword, int userRating, boolean isAdmin) {
+    public User(Integer userId, String login, String email, String password, Integer rating, boolean isAdmin) {
         this.userId = userId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userLogin = userLogin;
-        this.userEmail = userEmail;
-        this.hashPassword = hashPassword;
-        this.saltPassword = saltPassword;
-        this.userRating = userRating;
+        this.login = login;
+        this.email = email;
+        this.password = password;
+        this.rating = rating;
         this.isAdmin = isAdmin;
     }
 
     public User() {
     }
 
-    public Integer getUserId() {
+    public Integer getId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setId(Integer userId) {
         this.userId = userId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getLogin() {
+        return login;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getUserLogin() {
-        return userLogin;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserLogin(String userLogin) {
-        this.userLogin = userLogin;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public int getRating() {
+        return rating;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getHashPassword() {
-        return hashPassword;
-    }
-
-    public void setHashPassword(String hashPassword) {
-        this.hashPassword = hashPassword;
-    }
-
-    public String getSaltPassword() {
-        return saltPassword;
-    }
-
-    public void setSaltPassword(String saltPassword) {
-        this.saltPassword = saltPassword;
-    }
-
-    public int getUserRating() {
-        return userRating;
-    }
-
-    public void setUserRating(int userRating) {
-        this.userRating = userRating;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public boolean getIsAdmin() {
@@ -128,13 +92,10 @@ public class User {
     public String toString() {
         return "User{" +
                 "userId=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userLogin='" + userLogin + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", hashPassword='" + hashPassword + '\'' +
-                ", saltPassword='" + saltPassword + '\'' +
-                ", userRating=" + userRating +
+                ", login='" + login + '\'' +
+                ", userEmail='" + email + '\'' +
+                ", hashPassword='" + password + '\'' +
+                ", userRating=" + rating +
                 ", isAdmin=" + isAdmin +
                 '}';
     }
@@ -146,29 +107,23 @@ public class User {
 
         User user = (User) o;
 
-        if (userRating != user.userRating) return false;
-        //if (isAdmin != user.isAdmin) return false;
+        if (rating != user.rating) return false;
+        if (isAdmin != user.isAdmin) return false;
         if (userId != null ? !userId.equals(user.userId) : user.userId != null) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
-        if (userLogin != null ? !userLogin.equals(user.userLogin) : user.userLogin != null) return false;
-        if (userEmail != null ? !userEmail.equals(user.userEmail) : user.userEmail != null) return false;
-        if (hashPassword != null ? !hashPassword.equals(user.hashPassword) : user.hashPassword != null) return false;
-        return saltPassword != null ? saltPassword.equals(user.saltPassword) : user.saltPassword == null;
+        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        if (email != null ? !email.equals(user.email) : user.email != null) return false;
+        return password != null ? !password.equals(user.password) : user.password == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = userId != null ? userId.hashCode() : 0;
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (userLogin != null ? userLogin.hashCode() : 0);
-        result = 31 * result + (userEmail != null ? userEmail.hashCode() : 0);
-        result = 31 * result + (hashPassword != null ? hashPassword.hashCode() : 0);
-        result = 31 * result + (saltPassword != null ? saltPassword.hashCode() : 0);
-        result = 31 * result + userRating;
-        //result = 31 * result + (isAdmin ? 1 : 0);
+        result = 31 * result + (login != null ? login.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + rating;
+        result = 31 * result + (isAdmin ? 1 : 0);
         return result;
     }
 

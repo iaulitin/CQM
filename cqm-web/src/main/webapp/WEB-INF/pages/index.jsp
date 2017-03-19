@@ -35,35 +35,7 @@
     </div>
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
-    <div class="CafeContent"  style="margin-top: 20px; padding-left: 5px;">
-
-        <h2>Место под фотографию</h2>
-        <br>
-        <h2> <sec:authentication property="principal.username"/></h2>
-
-            <%--TO BE FIXED
-        <h2>Ваш рейтинг: <c:out value="${rating}"/>"/></h2>
-            TO BE FIXED --%>
-    </div>
-    <div class="PageMenu">
-        Вы зашли под именем <sec:authentication property="principal.username"/>
-        <a href="<c:url value="/"/>">
-            <div class="MenuButton"> Личный кабинет</div>
-        </a>
-        <a href="<c:url value="/reports"/>">
-            <div class="MenuButton"> Отчеты</div>
-        </a>
-        <a href="<c:url value="/cafeterias"/>">
-            <div class="MenuButton"> Информация о столовых</div>
-        </a>
-        <a href="<c:url value="/users"/>">
-            <div class="MenuButton"> Рейтинг Пользователей</div>
-        </a>
-        <a href="<c:url value="/logout"/>">
-            <div class="MenuButton"> Выход</div>
-        </a>
-        </p>
-    </div>
+    <jsp:forward page="/profile"/>
 </sec:authorize>
 </body>
 </html>

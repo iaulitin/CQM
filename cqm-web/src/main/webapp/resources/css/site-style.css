@@ -1,9 +1,11 @@
-html {
-    background: url(/resources/img/background.jpg) no-repeat center center fixed;
+body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .PageHeader {
@@ -155,3 +157,16 @@ fieldset[disabled] .MenuButton.focus {
     background-color: #fff;
 }
 
+.ProfileContent {
+
+    margin-left: 1%;
+    margin-bottom: 1%;
+    position: absolute;
+    width: 75%;
+    font-family: 'Trocchi', serif;
+    font-weight: normal;
+    font-size: 24px;
+    background: rgba(211, 211, 211, 0.8);
+    border-radius: 20px;
+    vertical-align: center;
+}

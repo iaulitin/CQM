@@ -14,11 +14,6 @@ import java.util.List;
 @Repository
 public interface ReportRepository extends CrudRepository<Report, Integer> {
 
-    @Query("select r from Report r where r.load = :load")
-    List<Integer> findByLoad(@Param("load") Integer load);
-
-    @Query("select r from Report r where (current_date - date) < :time")
-    List<Report> findFreshestReports(@Param("time") Date time);
 
     @Query("select r from Report r  order by date desc")
     List<Report> findAllReportsOrderByDateDesc();

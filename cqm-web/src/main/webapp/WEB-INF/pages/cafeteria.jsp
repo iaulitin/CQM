@@ -18,7 +18,8 @@
 
         <link href="<c:url value="/resources/css/site-style.css" />" rel="stylesheet">
     </head>
-    <body>
+
+    <body BACKGROUND="${pageContext.request.contextPath}/resources/img/background.jpg"/>
     <div class="CafeContent">
         <c:if test="${!empty cafeterias}">
         <c:forEach items="${cafeterias}" var="cafeteria">
@@ -36,7 +37,7 @@
                     <div class="CafeName"><c:out value="${cafeteria.cafeName}"/></div>
                 </td>
                 <td rowspan="2">
-                    <div class="CafeLoad">Место для Вашей оценки загруженности</div>
+                    <div class="CafeLoad"><c:out value="${cafeteria.workHours}"/></div>
                 </td>
             </tr>
             <tr>
@@ -48,6 +49,7 @@
             </c:if>
         </table>
     </div>
+
     <div class="PageMenu">
         Вы зашли под именем <sec:authentication property="principal.username"/>
         <a href="<c:url value="/"/>">

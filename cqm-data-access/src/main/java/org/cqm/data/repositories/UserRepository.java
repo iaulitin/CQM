@@ -11,21 +11,13 @@ import java.util.List;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-    @Query("select u from User u order by u.userRating desc")
-    List<User> findRatingTable();
 
-    @Query("select u from User u where u.userId = :userId")
-    List<User> findById(@Param("userId") Integer userId);
+    @Query("select u from User u where u.login = :login")
+    List<User> findByLogin(@Param("login") String login);
 
-    @Query("select u from User u where u.lastName = :lastName")
-    List<User> findByLastName(@Param("lastName") String lastName);
-
-    @Query("select u from User u where u.userLogin = :userLogin")
-    List<User> findByLogin(@Param("userLogin") String userLogin);
-
-    @Query("select u from User u order by u.userId asc")
+    @Query("select u from User u order by u.id asc")
     List<User> findAllUserOrderByIdAsc();
 
-    @Query("select u from User u order by u.userRating desc")
+    @Query("select u from User u order by u.rating desc")
     List<User> findAllUsersOrderByRatingDesc();
 }

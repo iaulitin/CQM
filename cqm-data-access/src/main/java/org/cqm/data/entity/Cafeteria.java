@@ -19,10 +19,14 @@ public class Cafeteria {
     @Column(name = "address")
     private String cafeAddress;
 
-    public Cafeteria(Integer cafeId, String cafeName, String cafeAddress) {
+    @Column(name = "work_hours")
+    private String workHours;
+
+    public Cafeteria(Integer cafeId, String cafeName, String cafeAddress, String workHours) {
         this.cafeId = cafeId;
         this.cafeName = cafeName;
         this.cafeAddress = cafeAddress;
+        this.workHours = workHours;
     }
 
     public Cafeteria() {
@@ -53,6 +57,14 @@ public class Cafeteria {
         this.cafeAddress = cafeAddress;
     }
 
+    public String getWorkHours() {
+        return workHours;
+    }
+
+    public void setWorkHours(String workHours) {
+        this.workHours = workHours;
+    }
+
     @Override
     public String toString() {
         return "Cafeteria{" +
@@ -71,6 +83,7 @@ public class Cafeteria {
 
         if (cafeId != null ? !cafeId.equals(cafeteria.cafeId) : cafeteria.cafeId != null) return false;
         if (cafeName != null ? !cafeName.equals(cafeteria.cafeName) : cafeteria.cafeName != null) return false;
+        if (workHours != null ? !workHours.equals(cafeteria.workHours) : cafeteria.workHours != null) return false;
         return cafeAddress != null ? cafeAddress.equals(cafeteria.cafeAddress) : cafeteria.cafeAddress == null;
 
     }
@@ -80,6 +93,7 @@ public class Cafeteria {
         int result = cafeId != null ? cafeId.hashCode() : 0;
         result = 31 * result + (cafeName != null ? cafeName.hashCode() : 0);
         result = 31 * result + (cafeAddress != null ? cafeAddress.hashCode() : 0);
+        result = 31 * result + (workHours != null ? workHours.hashCode() : 0);
         return result;
     }
 }

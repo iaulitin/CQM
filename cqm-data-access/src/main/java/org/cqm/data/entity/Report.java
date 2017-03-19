@@ -28,15 +28,19 @@ public class Report {
     @Temporal(TemporalType.DATE)
     private Date date;
 
+    @Column(name = "rating")
+    private Integer rating;
+
     public Report() {
     }
 
-    public Report(Integer reportId, Integer userId, Integer cafeId, Integer load, Date date) {
+    public Report(Integer reportId, Integer userId, Integer cafeId, Integer load, Date date, Integer rating) {
         this.reportId = reportId;
         this.userId = userId;
         this.cafeId = cafeId;
         this.load = load;
         this.date = date;
+        this.rating = rating;
     }
 
     public Report(Integer reportId) {
@@ -83,6 +87,14 @@ public class Report {
         this.date = date;
     }
 
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -94,6 +106,7 @@ public class Report {
         if (userId != null ? !userId.equals(report.userId) : report.userId != null) return false;
         if (cafeId != null ? !cafeId.equals(report.cafeId) : report.cafeId != null) return false;
         if (load != null ? !load.equals(report.load) : report.load != null) return false;
+        if (rating != null ? !rating.equals(report.rating) : report.rating != null) return false;
         return date != null ? date.equals(report.date) : report.date == null;
 
     }
@@ -105,6 +118,7 @@ public class Report {
         result = 31 * result + (cafeId != null ? cafeId.hashCode() : 0);
         result = 31 * result + (load != null ? load.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (rating != null ? rating.hashCode() : 0);
         return result;
     }
 
@@ -116,6 +130,7 @@ public class Report {
                 ", cafeId=" + cafeId +
                 ", load=" + load +
                 ", date=" + date +
+                ", date=" + rating +
                 '}';
     }
 }

@@ -30,8 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // PasswordEncoder for SHA1
     @Autowired
     public void registerGlobalAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
-        //.passwordEncoder(getShaPasswordEncoder());
+        auth.userDetailsService(userDetailsService).passwordEncoder(getShaPasswordEncoder());
     }
 
     @Override

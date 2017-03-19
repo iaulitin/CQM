@@ -21,7 +21,7 @@
         <link href="<c:url value="/resources/css/site-style.css" />" rel="stylesheet">
 
     </head>
-    <body>
+    <body BACKGROUND="${pageContext.request.contextPath}/resources/img/background.jpg"/>
     <div class="CafeContent">
         <table width="98%" align="center" class="CafeTable">
             <tr>
@@ -33,8 +33,8 @@
                 <c:forEach items="${users}" var="user">
                     <tr>
                         <td align="center">Место для Вашего Фото</td>
-                        <td align="center"><c:out value="${user.userLogin}"/></td>
-                        <td align="center"><c:out value="${user.userRating}"/></td>
+                        <td align="center"><c:out value="${user.login}"/></td>
+                        <td align="center"><c:out value="${user.rating}"/></td>
                     </tr>
                 </c:forEach>
             </c:if>

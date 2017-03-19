@@ -17,8 +17,8 @@ public class UserService {
         return this.userRepository;
     }
 
-    public User findUserByLogin(String userLogin) {
-        List<User> users = userRepository.findByLogin(userLogin);
+    public User findUserByLogin(String login) {
+        List<User> users = userRepository.findByLogin(login);
         if (users == null && users.isEmpty() )
             return null;
         return users.get(0);
