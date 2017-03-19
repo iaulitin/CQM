@@ -14,9 +14,9 @@
 
     <title>CQM | Вход </title>
 
-    <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/signin.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/jumbotron-narrow.css" />" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/bootstrap.css" />" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/signin.css"/>" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/jumbotron-narrow.css" />" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -24,9 +24,9 @@
         <c:url value="/j_spring_security_check" var="loginUrl"/>
         <form action="${loginUrl}" method="post">
             <h2 class="form-signin-heading">Пожалуйста, войдите</h2>
-            <input type="text" class="form-control" name="j_username" placeholder="User login" required autofocus
+            <input type="text" class="form-control" name="j_username" placeholder="Имя пользователя" required autofocus
                    value="lopez">
-            <input type="password" class="form-control" name="j_password" placeholder="Password" required value="qw12">
+            <input type="password" class="form-control" name="j_password" placeholder="Пароль required value="qw12">
             <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
         </form>
     </div>

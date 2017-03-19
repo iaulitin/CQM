@@ -20,12 +20,10 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private UserService userService;
 
-
-
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 
-        //get user via our repository
+        //get user via repository
         org.cqm.data.entity.User user = userService.findUserByLogin(login);
 
         //set roles
@@ -34,7 +32,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
         //check login and password
         UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), roles);
-
 
         return userDetails;
     }

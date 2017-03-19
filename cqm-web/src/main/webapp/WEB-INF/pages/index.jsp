@@ -16,8 +16,8 @@
 
     <title>CQM | Главная</title>
 
-    <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/site-style.css" />" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/bootstrap.css" />" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/site-style.css" />" rel="stylesheet">
 
 </head>
 <body>

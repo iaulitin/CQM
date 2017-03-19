@@ -16,7 +16,7 @@
 
     <title>CQM | Личный кабинет</title>
 
-    <link href="<c:url value="/resources/css/site-style.css" />" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/site-style.css" />" rel="stylesheet">
 
 </head>
 <body BACKGROUND="${pageContext.request.contextPath}/resources/img/background.jpg"/>

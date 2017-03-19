@@ -3,8 +3,13 @@ import org.cqm.data.entity.Cafeteria;
 import org.cqm.data.entity.User;
 import org.cqm.data.repositories.CafeteriaRepository;
 import org.cqm.data.repositories.UserRepository;
+import org.cqm.data.services.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -15,11 +20,12 @@ public class Tester {
 
     //private static final Logger logger = Logger.getLogger(Tester.class.getName());
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         //logger.info("Testing configuration...");
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         UserRepository userRepository = context.getBean(UserRepository.class);
+        UserService userService = context.getBean(UserService.class);
 
      /*   User user1 = new User();
         user1.setFirstName("Dmitry");
@@ -72,8 +78,17 @@ public class Tester {
 //        System.out.println(listCafeterias);
 //        List<User> oneUser = userRepository.findByLastName("Vorobyev");
 //        System.out.println(oneUser);
+//
+//        List<User> user = userRepository.findByEmail("");
+//        System.out.println(user);
 
-        List<User> user = userRepository.findByLogin("teaset");
-        System.out.println(user);
+        User user1 = userService.findUserByLogin("lo");
+        MessageDigest digest = MessageDigest.getInstance("SHA-1");
+        digest.update(user1.getPassword().getBytes("utf8"));
+        byte[] digestBytes = digest.digest();
+        String digestStr = javax.xml.bind.DatatypeConverter.printHexBinary(digestBytes);
+
+        System.out.println(digestStr.toLowerCase());
+        System.out.println("4f8daa100a9cad389c08a3c0f0d261f0d8c0339e");
     }
 }

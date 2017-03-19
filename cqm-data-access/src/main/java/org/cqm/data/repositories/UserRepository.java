@@ -11,9 +11,11 @@ import java.util.List;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-
     @Query("select u from User u where u.login = :login")
     List<User> findByLogin(@Param("login") String login);
+
+    @Query("select u from User u where u.email = :email")
+    List<User> findByEmail(@Param("email") String email);
 
     @Query("select u from User u order by u.id asc")
     List<User> findAllUserOrderByIdAsc();

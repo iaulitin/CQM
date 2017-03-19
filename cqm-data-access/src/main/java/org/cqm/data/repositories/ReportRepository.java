@@ -14,7 +14,6 @@ import java.util.List;
 @Repository
 public interface ReportRepository extends CrudRepository<Report, Integer> {
 
-
     @Query("select r from Report r  order by date desc")
     List<Report> findAllReportsOrderByDateDesc();
 }
