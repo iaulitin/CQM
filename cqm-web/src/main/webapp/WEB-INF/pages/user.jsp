@@ -23,18 +23,24 @@
     </head>
     <body BACKGROUND="${pageContext.request.contextPath}/resources/img/background.jpg"/>
     <div class="CafeContent">
-        <table width="98%" align="center" class="CafeTable">
+        <table align="center" class="CafeTable" width="98%">
             <tr>
-                <th width="35%">Фото профиля</th>
-                <th width="40%">Имя пользователя</th>
-                <th width="25%">Рейтинг</th>
+                <th width="25%" align="left">
+                    <div class="UserRatingHeader"> Рейтинг
+                </th>
+                <th width="75%">
+                    <div class="UserLoginHeader">Имя пользователя</div>
+                </th>
             </tr>
             <c:if test="${!empty users}">
                 <c:forEach items="${users}" var="user">
                     <tr>
-                        <td align="center">Место для Вашего Фото</td>
-                        <td align="center"><c:out value="${user.login}"/></td>
-                        <td align="center"><c:out value="${user.rating}"/></td>
+                        <td>
+                            <div class="UserRating"><c:out value="${user.rating}"/></div>
+                        </td>
+                        <td>
+                            <div class="UserLogin"><c:out value="${user.login}"/></div>
+                        </td>
                     </tr>
                 </c:forEach>
             </c:if>

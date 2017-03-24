@@ -1,6 +1,10 @@
 package org.cqm.data.entity;
 
 import javax.persistence.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 @Entity
 @Table(name = "Cafeterias")
@@ -22,7 +26,15 @@ public class Cafeteria {
     @Column(name = "work_hours")
     private String workHours;
 
-    public Cafeteria(Integer cafeId, String cafeName, String cafeAddress, String workHours) {
+    @Column(name = "photo")
+    private byte[] photoByte;
+
+    @Transient
+    private File photo;
+
+
+
+    public Cafeteria(Integer cafeId, String cafeName, String cafeAddress, String workHours, byte[] photoByte) {
         this.cafeId = cafeId;
         this.cafeName = cafeName;
         this.cafeAddress = cafeAddress;
@@ -65,6 +77,22 @@ public class Cafeteria {
         this.workHours = workHours;
     }
 
+    public byte[] getPhotoByte() {
+        return photoByte;
+    }
+
+    public void setPhotoByte(byte[] photo) {
+        this.photoByte = photo;
+    }
+
+    public File getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(File photo) {
+        this.photo = photo;
+    }
+
     @Override
     public String toString() {
         return "Cafeteria{" +
@@ -96,4 +124,5 @@ public class Cafeteria {
         result = 31 * result + (workHours != null ? workHours.hashCode() : 0);
         return result;
     }
+    
 }

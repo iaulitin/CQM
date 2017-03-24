@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td height="200px">
-                    <div class="CafePhoto">Место для Вашей фотографии</div>
+                    <div class="CafePhoto"></div>
                 </td>
                 <td>
                     <div class="CafeName"><c:out value="${cafeteria.cafeName}"/></div>

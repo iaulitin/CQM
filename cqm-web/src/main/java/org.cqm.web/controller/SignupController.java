@@ -12,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
@@ -25,13 +24,13 @@ public class SignupController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "signup", method = RequestMethod.GET)
+    @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
         return "signup";
     }
 
-    @RequestMapping(value = "signup", method = RequestMethod.POST)
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signup(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         userValidator.validate(userForm, bindingResult);
         if (bindingResult.hasErrors()) {

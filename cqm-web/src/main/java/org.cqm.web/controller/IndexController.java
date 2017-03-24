@@ -37,4 +37,5 @@ public class IndexController {
         model.addAttribute("rating", currentUser.getUserRating());
         return ("profile");
     }*/
+    
 }

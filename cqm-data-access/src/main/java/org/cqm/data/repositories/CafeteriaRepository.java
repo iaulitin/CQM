@@ -13,7 +13,7 @@ import java.util.List;
 public interface CafeteriaRepository extends CrudRepository<Cafeteria, Integer> {
 
     @Query("select c from Cafeteria c where c.cafeName = :cafeName")
-    List<String> findByCafeName(@Param("cafeName") String cafeName);
+    List<Cafeteria> findByCafeName(@Param("cafeName") String cafeName);
 
     @Query("select c from Cafeteria c order by c.cafeId")
     List<Cafeteria> findAllCafeteriasOrderByCafeIdAsc();

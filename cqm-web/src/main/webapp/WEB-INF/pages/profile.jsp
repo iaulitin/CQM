@@ -26,10 +26,8 @@
 <sec:authorize access="isAuthenticated()">
 
     <div class="ProfileContent">
+        <sec:authentication property="principal.username"/>,
         <br>
-        Место под фотографию
-        <br>
-        <sec:authentication property="principal.username"/>
         Ваш рейтинг: <c:out value="${rating}"/>
         </div>
     </div>

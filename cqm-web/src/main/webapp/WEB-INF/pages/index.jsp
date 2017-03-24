@@ -1,4 +1,3 @@
-<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
@@ -16,26 +15,28 @@
 
     <title>CQM | Главная</title>
 
-    <link href="<c:url value="${contextPath}/resources/css/bootstrap.css" />" rel="stylesheet">
-    <link href="<c:url value="${contextPath}/resources/css/site-style.css" />" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/common.css"/>" rel="stylesheet">
 
 </head>
 <body>
 <sec:authorize access="!isAuthenticated()">
-    <div class="jumbotron" style="margin-top: 20px; padding: 5%;">
-        <h1 align="center">Cafeteria Queues Monitoring</h1>
-        <p class="lead" align="center">
-            Cafeteria Queues Monitoring - сервис, обеспечивающий вас информацией о загруженности столовых Физтеха
-        </p>
-        <p class="lead" align="center">
+    <div class="container">
+        <h2 align="center">Cafeteria Queues Monitoring</h2>
+        <h4 class="form-heading" align="center">
+            Cafeteria Queues Monitoring - сервис, обеспечивающий вас информацией о загруженности столовых Физтеха.
             Вы должны войти, чтобы использовать CQM
+        </h4>
+        <p class="lead" align="center">
         </p>
         <p align="center"> <a class="btn btn-lg btn-success" href="<c:url value="/login" />" role="button">Вход</a>
-        <a class="btn btn-lg btn-success" href="<c:url value="/signup" />" role="button">Регистрация</a> </p>
     </div>
+
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
     <jsp:forward page="/profile"/>
 </sec:authorize>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

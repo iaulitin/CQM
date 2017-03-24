@@ -14,22 +14,26 @@
 
     <title>CQM | Вход </title>
 
-    <link href="<c:url value="${contextPath}/resources/css/bootstrap.css" />" rel="stylesheet">
-    <link href="<c:url value="${contextPath}/resources/css/signin.css"/>" rel="stylesheet">
-    <link href="<c:url value="${contextPath}/resources/css/jumbotron-narrow.css" />" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="${contextPath}/resources/css/common.css"/>" rel="stylesheet">
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron" style="margin-top: 20px;">
-        <c:url value="/j_spring_security_check" var="loginUrl"/>
-        <form action="${loginUrl}" method="post">
-            <h2 class="form-signin-heading">Пожалуйста, войдите</h2>
-            <input type="text" class="form-control" name="j_username" placeholder="Имя пользователя" required autofocus
-                   value="lopez">
-            <input type="password" class="form-control" name="j_password" placeholder="Пароль required value="qw12">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-        </form>
-    </div>
+    <c:url value="/j_spring_security_check" var="loginUrl"/>
+    <form action="${loginUrl}" method="post">
+        <h2 class="form-heading" align="center">Пожалуйста, войдите</h2>
+        <input type="text" class="form-control" name="j_username" placeholder="Имя пользователя" required autofocus
+               value="lopez">
+        <input type="password" class="form-control" name="j_password" placeholder="Пароль required value=" qw12">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+        <h4 class="text-center"> <a href="<c:url value="/signup"/>">Зарегистрироваться</a></h4>
+    </form>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

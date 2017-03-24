@@ -33,7 +33,7 @@ body {
     width: 75%;
     font-family: 'Trocchi', serif;
     font-weight: normal;
-    background: rgba(211, 211, 211, 0.8);
+    background: rgba(211, 211, 211, 0.7);
     border-radius: 20px;
 }
 
@@ -43,23 +43,46 @@ body {
 
 .CafeName {
     padding-left: 20px;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .CafePhoto {
     border-radius: 80px;
     background: #5cb85c;
-
 }
 
 .CafeAddress {
-    text-align: center;
-    font-size: 40px;
-}
+     text-align: center;
+     font-size: 32px;
+ }
 
 .CafeLoad {
     text-align: center;
-    font-size: 40px;
+    font-size: 32px;
+}
+
+.UserRatingHeader {
+    font-weight: bold;
+    padding-left: 20px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.UserLoginHeader {
+    font-weight: bold;
+    text-align: center;
+    font-size: 28px;
+}
+
+.UserRating {
+    padding-left: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.UserLogin {
+    text-align: center;
+    font-size: 24px;
 }
 
 .PageMenu {
@@ -67,6 +90,17 @@ body {
     margin-left: 77%;
     position: fixed;
     width: 21%;
+}
+
+.PageAdv {
+    margin-top: 20%;
+    margin-left: 77%;
+    position: fixed;
+    width: 21%;
+    font-family: 'Trocchi', serif;
+    font-weight: normal;
+    background: rgba(211, 211, 211, 0.8);
+    border-radius: 20px;
 }
 
 .MenuHeader {
@@ -158,7 +192,6 @@ fieldset[disabled] .MenuButton.focus {
 }
 
 .ProfileContent {
-
     margin-left: 1%;
     margin-bottom: 1%;
     position: absolute;
