@@ -25,14 +25,14 @@ public class UserService {
 
     public User findUserByLogin(String login) {
         List<User> users = userRepository.findByLogin(login);
-        if (users == null && users.isEmpty() )
+        if (users == null || users.isEmpty() )
             return null;
         return users.get(0);
     }
 
     public User findUserByEmail(String email) {
         List<User> users = userRepository.findByEmail(email);
-        if (users == null && users.isEmpty() )
+        if (users == null || users.isEmpty() )
             return null;
         return users.get(0);
     }

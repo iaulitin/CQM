@@ -36,6 +36,8 @@ public class SignupController {
         if (bindingResult.hasErrors()) {
             return "signup";
         }
+        userForm.setRating(0);
+        userForm.setIsAdmin(false);
         userService.save(userForm);
         return "login";
     }

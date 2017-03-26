@@ -26,11 +26,14 @@
     <c:url value="/j_spring_security_check" var="loginUrl"/>
     <form action="${loginUrl}" method="post">
         <h2 class="form-heading" align="center">Пожалуйста, войдите</h2>
-        <input type="text" class="form-control" name="j_username" placeholder="Имя пользователя" required autofocus
-               value="lopez">
-        <input type="password" class="form-control" name="j_password" placeholder="Пароль required value=" qw12">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
-        <h4 class="text-center"> <a href="<c:url value="/signup"/>">Зарегистрироваться</a></h4>
+        <div class="form-group ${error != null ? 'has-error' : ''}">
+            <span>${message}</span>
+            <input type="text" class="form-control" name="j_username" placeholder="Имя пользователя" required autofocus
+                   value="lopez">
+            <input type="password" class="form-control" name="j_password" placeholder="Пароль required value=" qw12">
+            <span>${error}</span>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+            <h4 class="text-center"><a href="<c:url value="/signup"/>">Зарегистрироваться</a></h4>
     </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

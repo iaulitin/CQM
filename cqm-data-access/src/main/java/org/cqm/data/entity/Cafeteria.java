@@ -124,5 +124,5 @@ public class Cafeteria {
         result = 31 * result + (workHours != null ? workHours.hashCode() : 0);
         return result;
     }
-    
+
 }

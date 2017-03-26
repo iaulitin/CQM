@@ -29,15 +29,25 @@ public class User {
     private Integer rating;
 
     @Column(name = "is_admin")
-    private boolean isAdmin;
+    private Boolean isAdmin;
 
-    public User(Integer userId, String login, String email, String password, Integer rating, boolean isAdmin) {
+    //TODO jstl/core - deserialization
+    public User(Integer userId, String login, String email, String password, Integer rating, Boolean isAdmin) {
         this.userId = userId;
         this.login = login;
         this.email = email;
         this.password = password;
         this.rating = rating;
         this.isAdmin = isAdmin;
+    }
+
+    public User (String login, String email, String password, String confirmPassword){
+        this.login = login;
+        this.email = email;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        this.rating = 0;
+        this.isAdmin = false;
     }
 
     public User() {
