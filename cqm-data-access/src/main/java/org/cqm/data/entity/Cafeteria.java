@@ -1,10 +1,7 @@
 package org.cqm.data.entity;
 
+
 import javax.persistence.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 @Entity
 @Table(name = "Cafeterias")
@@ -29,16 +26,32 @@ public class Cafeteria {
     @Column(name = "photo")
     private byte[] photoByte;
 
-    @Transient
-    private File photo;
+    private byte[] encodeBase64 = new byte[0];
 
+    private String base64DataString = "";
 
+    public String getBase64DataString() {
+        return base64DataString;
+    }
+
+    public void setBase64DataString(String base64DString) {
+        this.base64DataString = base64DString;
+    }
+
+    public byte[] getEncodeBase64() {
+        return encodeBase64;
+    }
+
+    public void setEncodeBase64(byte[] encodeBase64) {
+        this.encodeBase64 = encodeBase64;
+    }
 
     public Cafeteria(Integer cafeId, String cafeName, String cafeAddress, String workHours, byte[] photoByte) {
         this.cafeId = cafeId;
         this.cafeName = cafeName;
         this.cafeAddress = cafeAddress;
         this.workHours = workHours;
+        this.photoByte = photoByte;
     }
 
     public Cafeteria() {
@@ -83,14 +96,6 @@ public class Cafeteria {
 
     public void setPhotoByte(byte[] photo) {
         this.photoByte = photo;
-    }
-
-    public File getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(File photo) {
-        this.photo = photo;
     }
 
     @Override

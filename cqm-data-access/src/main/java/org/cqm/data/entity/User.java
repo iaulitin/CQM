@@ -31,7 +31,6 @@ public class User {
     @Column(name = "is_admin")
     private Boolean isAdmin;
 
-    //TODO jstl/core - deserialization
     public User(Integer userId, String login, String email, String password, Integer rating, Boolean isAdmin) {
         this.userId = userId;
         this.login = login;

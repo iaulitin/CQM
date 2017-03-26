@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td height="200px">
-                    <div class="CafePhoto"></div>
+                    <img class = "CafePhoto" src="data:image/jpg;base64,<c:out value='${cafeteria.base64DataString}'/>"/>
                 </td>
                 <td>
                     <div class="CafeName"><c:out value="${cafeteria.cafeName}"/></div>
