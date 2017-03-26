@@ -22,20 +22,10 @@ import java.util.List;
 public class IndexController {
 
     @Resource(name = "userService")
-   private UserService userService;
+    private UserService userService;
 
     @RequestMapping(value = "/") //that's the link at the website
     public String printIndex(ModelMap model) {
         return "index";     //that's the name of jsp to return
     }
-/*
-    @RequestMapping(value = "/profile")
-    public String printIndex(Model model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName();
-        User currentUser = userService.findUserByLogin(name);
-        model.addAttribute("rating", currentUser.getUserRating());
-        return ("profile");
-    }*/
-    
 }

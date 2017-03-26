@@ -31,14 +31,20 @@ public class SignupController {
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signup(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public String signup(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model){
         userValidator.validate(userForm, bindingResult);
         if (bindingResult.hasErrors()) {
             return "signup";
         }
         userForm.setRating(0);
         userForm.setIsAdmin(false);
-        userService.save(userForm);
+        try {
+            userService.save(userForm);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         return "login";
     }
 }

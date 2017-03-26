@@ -21,7 +21,10 @@
     <body BACKGROUND="${pageContext.request.contextPath}/resources/img/background.jpg"/>
 
     <div class="ProfileContent">
-        Тут будут отчеты
+        <table width = 98%>
+
+
+        </table>
     </div>
 
     <div class="PageMenu">
