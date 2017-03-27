@@ -3,11 +3,8 @@ package org.cqm.data.services;
 import org.cqm.data.entity.User;
 import org.cqm.data.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.beans.Encoder;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -36,6 +33,7 @@ public class UserService {
             return null;
         return users.get(0);
     }
+
 
     public void save(User user) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest digest = MessageDigest.getInstance("SHA-1");

@@ -24,18 +24,7 @@ public class CafeteriaController {
         int listSize = cafeterias.size();
         for (int i = 0; i < listSize; i++) {
             Cafeteria cafeteria = cafeterias.get(i);
-          /*  try {
-                File outputPhoto = new File(*//*"/src/main/webapp/resources/img/photo"*//*+ i + ".jpg");
-                FileOutputStream fos = new FileOutputStream(outputPhoto);
-                fos.write(cafeteria.getPhotoByte());
-                cafeteria.setPhoto(outputPhoto);
-                fos.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-*/          cafeteria.setEncodeBase64(Base64.encodeBase64(cafeteria.getPhotoByte()));
+            cafeteria.setEncodeBase64(Base64.encodeBase64(cafeteria.getPhotoByte()));
             try {
                 cafeteria.setBase64DataString(new String(cafeteria.getEncodeBase64(), "UTF-8"));
             } catch (UnsupportedEncodingException e) {

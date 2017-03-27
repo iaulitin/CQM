@@ -41,24 +41,25 @@ body {
     border-radius: 20px;
 }
 
+
 .CafeName {
     padding-left: 20px;
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .CafePhoto {
-    border-radius: 80px;
+    border-radius: 400px;
     background: #5cb85c;
 }
 
 .CafeAddress {
-     text-align: center;
-     font-size: 32px;
- }
+    text-align: center;
+    font-size: 24px;
+}
 
 .CafeLoad {
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .UserRatingHeader {
@@ -71,7 +72,7 @@ body {
 .UserLoginHeader {
     font-weight: bold;
     text-align: center;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .UserRating {

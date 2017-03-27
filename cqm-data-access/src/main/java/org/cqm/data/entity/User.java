@@ -31,6 +31,10 @@ public class User {
     @Column(name = "is_admin")
     private Boolean isAdmin;
 
+    private Integer rank = 0;
+
+
+
     public User(Integer userId, String login, String email, String password, Integer rating, Boolean isAdmin) {
         this.userId = userId;
         this.login = login;
@@ -106,6 +110,14 @@ public class User {
 
     public void setIsAdmin(boolean admin) {
         isAdmin = admin;
+    }
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
 
     @Override

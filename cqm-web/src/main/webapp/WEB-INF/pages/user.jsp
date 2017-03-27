@@ -23,18 +23,25 @@
     </head>
     <body BACKGROUND="${pageContext.request.contextPath}/resources/img/background.jpg"/>
     <div class="CafeContent">
+        <h2 align="center">Топ-5 пользователей CQM</h2>
         <table align="center" class="CafeTable" width="98%">
             <tr>
+                <th width="18%" align="left">
+                    <div class="UserRatingHeader"> Место
+                </th>
                 <th width="25%" align="left">
                     <div class="UserRatingHeader"> Рейтинг
                 </th>
-                <th width="75%">
+                <th width="55%">
                     <div class="UserLoginHeader">Имя пользователя</div>
                 </th>
             </tr>
             <c:if test="${!empty users}">
                 <c:forEach items="${users}" var="user">
                     <tr>
+                        <td>
+                            <div class="UserRating"><c:out value="${user.rank}"/></div>
+                        </td>
                         <td>
                             <div class="UserRating"><c:out value="${user.rating}"/></div>
                         </td>
@@ -43,6 +50,28 @@
                         </td>
                     </tr>
                 </c:forEach>
+                <tr>
+                    <td>
+                        <div class="UserRating">...</div>
+                    </td>
+                    <td>
+                        <div class="UserRating">...</div>
+                    </td>
+                    <td>
+                        <div class="UserRating">...</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="UserRating"><c:out value="${currentRank}"/></div>
+                    </td>
+                    <td>
+                        <div class="UserRating"><c:out value="${currentRating}"/></div>
+                    </td>
+                    <td>
+                        <div class="UserRating"><c:out value="${currentName}"/></div>
+                    </td>
+                </tr>
             </c:if>
         </table>
     </div>

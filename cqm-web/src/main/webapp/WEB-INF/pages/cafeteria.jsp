@@ -24,12 +24,12 @@
         <c:if test="${!empty cafeterias}">
         <c:forEach items="${cafeterias}" var="cafeteria">
         <table width="98%" align="center" class="CafeTable">
-            <tr>
+            <tr class="cafeTr">
                 <th width="35%"></th>
                 <th width="40%"></th>
                 <th width="25%"></th>
             </tr>
-            <tr>
+            <tr class="cafeTr">
                 <td height="200px">
                     <img class = "CafePhoto" src="data:image/jpg;base64,<c:out value='${cafeteria.base64DataString}'/>"/>
                 </td>
@@ -40,7 +40,7 @@
                     <div class="CafeLoad"><c:out value="${cafeteria.workHours}"/></div>
                 </td>
             </tr>
-            <tr>
+            <tr class="cafeTr">
                 <td colspan="2">
                     <div class="CafeAddress"><c:out value="${cafeteria.cafeAddress}"/></div>
                 </td>
