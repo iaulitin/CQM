@@ -33,8 +33,6 @@ public class User {
 
     private Integer rank = 0;
 
-
-
     public User(Integer userId, String login, String email, String password, Integer rating, Boolean isAdmin) {
         this.userId = userId;
         this.login = login;
@@ -42,6 +40,10 @@ public class User {
         this.password = password;
         this.rating = rating;
         this.isAdmin = isAdmin;
+    }
+
+
+    public User() {
     }
 
     public User (String login, String email, String password, String confirmPassword){
@@ -53,8 +55,6 @@ public class User {
         this.isAdmin = false;
     }
 
-    public User() {
-    }
 
     public Integer getId() {
         return userId;
@@ -125,10 +125,12 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", login='" + login + '\'' +
-                ", userEmail='" + email + '\'' +
-                ", hashPassword='" + password + '\'' +
-                ", userRating=" + rating +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", confirmPassword='" + confirmPassword + '\'' +
+                ", rating=" + rating +
                 ", isAdmin=" + isAdmin +
+                ", rank=" + rank +
                 '}';
     }
 
@@ -139,12 +141,15 @@ public class User {
 
         User user = (User) o;
 
-        if (rating != user.rating) return false;
-        if (isAdmin != user.isAdmin) return false;
         if (userId != null ? !userId.equals(user.userId) : user.userId != null) return false;
         if (login != null ? !login.equals(user.login) : user.login != null) return false;
         if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        return password != null ? !password.equals(user.password) : user.password == null;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
+        if (confirmPassword != null ? !confirmPassword.equals(user.confirmPassword) : user.confirmPassword != null)
+            return false;
+        if (rating != null ? !rating.equals(user.rating) : user.rating != null) return false;
+        if (isAdmin != null ? !isAdmin.equals(user.isAdmin) : user.isAdmin != null) return false;
+        return rank != null ? rank.equals(user.rank) : user.rank == null;
 
     }
 
@@ -154,9 +159,10 @@ public class User {
         result = 31 * result + (login != null ? login.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + rating;
-        result = 31 * result + (isAdmin ? 1 : 0);
+        result = 31 * result + (confirmPassword != null ? confirmPassword.hashCode() : 0);
+        result = 31 * result + (rating != null ? rating.hashCode() : 0);
+        result = 31 * result + (isAdmin != null ? isAdmin.hashCode() : 0);
+        result = 31 * result + (rank != null ? rank.hashCode() : 0);
         return result;
     }
-
 }

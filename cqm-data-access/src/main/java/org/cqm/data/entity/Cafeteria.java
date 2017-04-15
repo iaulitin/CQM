@@ -2,6 +2,7 @@ package org.cqm.data.entity;
 
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 @Entity
 @Table(name = "Cafeterias")
@@ -104,6 +105,10 @@ public class Cafeteria {
                 "cafeId=" + cafeId +
                 ", cafeName='" + cafeName + '\'' +
                 ", cafeAddress='" + cafeAddress + '\'' +
+                ", workHours='" + workHours + '\'' +
+                ", photoByte=" + Arrays.toString(photoByte) +
+                ", encodeBase64=" + Arrays.toString(encodeBase64) +
+                ", base64DataString='" + base64DataString + '\'' +
                 '}';
     }
 
@@ -116,8 +121,12 @@ public class Cafeteria {
 
         if (cafeId != null ? !cafeId.equals(cafeteria.cafeId) : cafeteria.cafeId != null) return false;
         if (cafeName != null ? !cafeName.equals(cafeteria.cafeName) : cafeteria.cafeName != null) return false;
+        if (cafeAddress != null ? !cafeAddress.equals(cafeteria.cafeAddress) : cafeteria.cafeAddress != null)
+            return false;
         if (workHours != null ? !workHours.equals(cafeteria.workHours) : cafeteria.workHours != null) return false;
-        return cafeAddress != null ? cafeAddress.equals(cafeteria.cafeAddress) : cafeteria.cafeAddress == null;
+        if (!Arrays.equals(photoByte, cafeteria.photoByte)) return false;
+        if (!Arrays.equals(encodeBase64, cafeteria.encodeBase64)) return false;
+        return base64DataString != null ? base64DataString.equals(cafeteria.base64DataString) : cafeteria.base64DataString == null;
 
     }
 
@@ -127,7 +136,9 @@ public class Cafeteria {
         result = 31 * result + (cafeName != null ? cafeName.hashCode() : 0);
         result = 31 * result + (cafeAddress != null ? cafeAddress.hashCode() : 0);
         result = 31 * result + (workHours != null ? workHours.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(photoByte);
+        result = 31 * result + Arrays.hashCode(encodeBase64);
+        result = 31 * result + (base64DataString != null ? base64DataString.hashCode() : 0);
         return result;
     }
-
 }

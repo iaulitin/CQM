@@ -56,14 +56,6 @@ public class Report {
         this.rating = rating;
     }
 
-    public Boolean getIsAuthor() {
-        return isAuthor;
-    }
-
-    public void setIsAuthor(Boolean isAuthor) {
-        this.isAuthor = isAuthor;
-    }
-
 
     public Boolean getIsVoted() {
         return isVoted;
@@ -149,6 +141,31 @@ public class Report {
         this.rating = rating;
     }
 
+    public Boolean getIsAuthor() {
+        return isAuthor;
+    }
+
+    public void setIsAuthor(Boolean isAuthor) {
+        this.isAuthor = isAuthor;
+    }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "reportId=" + reportId +
+                ", userId=" + userId +
+                ", cafeId=" + cafeId +
+                ", load=" + load +
+                ", date=" + date +
+                ", rating=" + rating +
+                ", author='" + author + '\'' +
+                ", authorRating=" + authorRating +
+                ", cafeName='" + cafeName + '\'' +
+                ", isVoted=" + isVoted +
+                ", isAuthor=" + isAuthor +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -160,8 +177,14 @@ public class Report {
         if (userId != null ? !userId.equals(report.userId) : report.userId != null) return false;
         if (cafeId != null ? !cafeId.equals(report.cafeId) : report.cafeId != null) return false;
         if (load != null ? !load.equals(report.load) : report.load != null) return false;
+        if (date != null ? !date.equals(report.date) : report.date != null) return false;
         if (rating != null ? !rating.equals(report.rating) : report.rating != null) return false;
-        return date != null ? date.equals(report.date) : report.date == null;
+        if (author != null ? !author.equals(report.author) : report.author != null) return false;
+        if (authorRating != null ? !authorRating.equals(report.authorRating) : report.authorRating != null)
+            return false;
+        if (cafeName != null ? !cafeName.equals(report.cafeName) : report.cafeName != null) return false;
+        if (isVoted != null ? !isVoted.equals(report.isVoted) : report.isVoted != null) return false;
+        return isAuthor != null ? isAuthor.equals(report.isAuthor) : report.isAuthor == null;
 
     }
 
@@ -173,18 +196,11 @@ public class Report {
         result = 31 * result + (load != null ? load.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (rating != null ? rating.hashCode() : 0);
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (authorRating != null ? authorRating.hashCode() : 0);
+        result = 31 * result + (cafeName != null ? cafeName.hashCode() : 0);
+        result = 31 * result + (isVoted != null ? isVoted.hashCode() : 0);
+        result = 31 * result + (isAuthor != null ? isAuthor.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Report{" +
-                "reportId=" + reportId +
-                ", userId=" + userId +
-                ", cafeId=" + cafeId +
-                ", load=" + load +
-                ", date=" + date +
-                ", date=" + rating +
-                '}';
     }
 }

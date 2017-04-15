@@ -56,29 +56,6 @@ public class Vote {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Vote vote1 = (Vote) o;
-
-        if (!voteId.equals(vote1.voteId)) return false;
-        if (!reportId.equals(vote1.reportId)) return false;
-        if (!userId.equals(vote1.userId)) return false;
-        return vote.equals(vote1.vote);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = voteId.hashCode();
-        result = 31 * result + reportId.hashCode();
-        result = 31 * result + userId.hashCode();
-        result = 31 * result + vote.hashCode();
-        return result;
-    }
-
-    @Override
     public String toString() {
         return "Vote{" +
                 "voteId=" + voteId +
@@ -86,5 +63,28 @@ public class Vote {
                 ", userId=" + userId +
                 ", vote=" + vote +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Vote vote1 = (Vote) o;
+
+        if (voteId != null ? !voteId.equals(vote1.voteId) : vote1.voteId != null) return false;
+        if (reportId != null ? !reportId.equals(vote1.reportId) : vote1.reportId != null) return false;
+        if (userId != null ? !userId.equals(vote1.userId) : vote1.userId != null) return false;
+        return vote != null ? vote.equals(vote1.vote) : vote1.vote == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = voteId != null ? voteId.hashCode() : 0;
+        result = 31 * result + (reportId != null ? reportId.hashCode() : 0);
+        result = 31 * result + (userId != null ? userId.hashCode() : 0);
+        result = 31 * result + (vote != null ? vote.hashCode() : 0);
+        return result;
     }
 }
