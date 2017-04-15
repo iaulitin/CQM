@@ -11,10 +11,8 @@ import org.apache.commons.validator.routines.EmailValidator;
 
 @Component
 public class UserValidator implements Validator {
-
     @Autowired
     private UserService userService;
-
 
     @Override
     public boolean supports(Class<?> aClass) {

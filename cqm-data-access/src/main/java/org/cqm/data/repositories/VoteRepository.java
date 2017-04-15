@@ -14,7 +14,7 @@ import java.util.List;
 public interface VoteRepository extends CrudRepository<Vote, Integer> {
 
     @Query("select v from Vote v, User u where v.userId = u.userId and u.login = :login and v.reportId = :reportId")
-    List<Vote> findVoteByReportAndUser(@Param("login")String login, @Param("reportId") Integer reportId);
+    List<Vote> findVoteByReportAndUser(@Param("login") String login, @Param("reportId") Integer reportId);
 
     @Modifying
     @Transactional

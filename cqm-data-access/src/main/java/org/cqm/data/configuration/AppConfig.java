@@ -17,9 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-/**
- * Configuration class of Spring IoC container
- */
 @Configuration
 @ComponentScan(basePackages = "org.cqm.data")
 @PropertySource(value = {"classpath:META-INF/application.properties"})

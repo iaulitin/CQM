@@ -1,7 +1,6 @@
 package org.cqm.data.entity;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name = "Votes")
@@ -23,7 +22,9 @@ public class Vote {
     @Column(name = "vote")
     private Integer vote;
 
-    public Vote() {}
+    public Vote() {
+    }
+
     public Vote(Integer reportId, Integer userId, Integer vote) {
         this.reportId = reportId;
         this.userId = userId;

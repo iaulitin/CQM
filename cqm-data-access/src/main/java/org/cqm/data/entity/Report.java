@@ -2,10 +2,8 @@ package org.cqm.data.entity;
 
 
 import javax.persistence.*;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 @Entity
 @Table(name = "Reports")
@@ -47,10 +45,9 @@ public class Report {
     public Report() {
     }
 
-    public Report(Integer reportId, Integer userId, Integer cafeId, Integer load, Date date, Integer rating) {
-        this.reportId = reportId;
-        this.userId = userId;
+    public Report(int cafeId, int userId, int load, Date date, int rating) {
         this.cafeId = cafeId;
+        this.userId = userId;
         this.load = load;
         this.date = date;
         this.rating = rating;
