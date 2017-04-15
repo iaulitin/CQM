@@ -23,6 +23,13 @@ public class Vote {
     @Column(name = "vote")
     private Integer vote;
 
+    public Vote() {}
+    public Vote(Integer reportId, Integer userId, Integer vote) {
+        this.reportId = reportId;
+        this.userId = userId;
+        this.vote = vote;
+    }
+
     public Integer getVoteId() {
         return voteId;
     }

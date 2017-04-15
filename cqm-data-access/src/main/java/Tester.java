@@ -42,5 +42,7 @@ public class Tester {
 
         VoteRepository voteRepository = context.getBean(VoteRepository.class);
         VoteService voteService = context.getBean(VoteService.class);
+
+        System.out.println(Integer.MAX_VALUE);
     }
 }

@@ -21,14 +21,22 @@ public class UserService {
     }
 
     public User findUserByLogin(String login) {
-        List<User> users = userRepository.findByLogin(login);
+        List<User> users = userRepository.findUserByLogin(login);
+        if (users == null || users.isEmpty() )
+            return null;
+        return users.get(0);
+    }
+
+
+    public User findUserById(Integer id) {
+        List<User> users = userRepository.findUserById(id);
         if (users == null || users.isEmpty() )
             return null;
         return users.get(0);
     }
 
     public User findUserByEmail(String email) {
-        List<User> users = userRepository.findByEmail(email);
+        List<User> users = userRepository.findUserByEmail(email);
         if (users == null || users.isEmpty() )
             return null;
         return users.get(0);

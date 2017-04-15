@@ -44,15 +44,15 @@ public class AddReportController {
     @RequestMapping(value = "/addreport", method = RequestMethod.GET)
     public String getReportForm(Model model) {
         List<Cafeteria> cafeterias = cafeteriaService.getCafeteriaRepository().findAllCafeteriasOrderByCafeIdAsc();
-        List<String> cafeNames = new ArrayList<String>();
-        List<Integer> cafeLoads = new ArrayList<Integer>();
+        List<String> cafeNames = new ArrayList<>();
+        List<Integer> cafeLoads = new ArrayList<>();
         for (int i = 0; i < cafeterias.size(); i++) {
             cafeNames.add(i, cafeterias.get(i).getCafeName());
         }
         for (int i = 0; i < 11; i++) {
             cafeLoads.add(i, i);
         }
-        model.addAttribute("rating", userService.getUserRepository().findByLogin(SecurityContextHolder.getContext().getAuthentication().getName()).get(0).getRating());
+        model.addAttribute("rating", userService.getUserRepository().findUserByLogin(SecurityContextHolder.getContext().getAuthentication().getName()).get(0).getRating());
         model.addAttribute("cafeNames", cafeNames);
         model.addAttribute("cafeLoads", cafeLoads);
         model.addAttribute("reportForm", new Report());
@@ -68,7 +68,7 @@ public class AddReportController {
         }
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String currentName = auth.getName();
-        User currentUser = userService.getUserRepository().findByLogin(currentName).get(0);
+        User currentUser = userService.getUserRepository().findUserByLogin(currentName).get(0);
 
         Report report = new Report();
         report.setCafeName(reportForm.getCafeName());

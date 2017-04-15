@@ -28,9 +28,8 @@
         <h2 class="form-heading" align="center">Пожалуйста, войдите</h2>
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
-            <input type="text" class="form-control" name="j_username" placeholder="Имя пользователя" required autofocus
-                   value="lopez">
-            <input type="password" class="form-control" name="j_password" placeholder="Пароль required value=" qw12">
+            <input type="text" class="form-control" name="j_username" placeholder="Имя пользователя">
+            <input type="password" class="form-control" name="j_password" placeholder="Пароль">
             <span>${error}</span>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
             <h4 class="text-center"><a href="<c:url value="/signup"/>">Зарегистрироваться</a></h4>

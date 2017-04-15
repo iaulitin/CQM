@@ -15,6 +15,9 @@ public interface ReportRepository extends CrudRepository<Report, Integer> {
     @Query("select r from Report r order by date desc")
     List<Report> findAllReportsOrderByDateDesc();
 
+    @Query("select r from Report r where r.reportId = :reportId")
+    List<Report> findReportById(@Param("reportId") Integer reportId);
+
     @Query("select u from User u, Report r where u.userId = r.userId  and r.reportId = :reportId")
     List<User> findAuthorOfReport(@Param("reportId") Integer reportId);
 
