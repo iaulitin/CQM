@@ -2,7 +2,10 @@ package org.cqm.data.entity;
 
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 @Entity
 @Table(name = "Reports")
@@ -25,11 +28,21 @@ public class Report {
     private Integer load;
 
     @Column(name = "date")
-    @Temporal(TemporalType.DATE)
-    private Date date;
+    @Temporal(TemporalType.TIMESTAMP)
+    Date date;
 
     @Column(name = "rating")
     private Integer rating;
+
+    private String author;
+
+    private Integer authorRating;
+
+    private String cafeName;
+
+    private Boolean isVoted;
+
+    private Boolean isAuthor;
 
     public Report() {
     }
@@ -43,8 +56,48 @@ public class Report {
         this.rating = rating;
     }
 
-    public Report(Integer reportId) {
+    public Boolean getIsAuthor() {
+        return isAuthor;
+    }
 
+    public void setIsAuthor(Boolean isAuthor) {
+        this.isAuthor = isAuthor;
+    }
+
+
+    public Boolean getIsVoted() {
+        return isVoted;
+    }
+
+    public void setIsVoted(Boolean isVoted) {
+        this.isVoted = isVoted;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public Integer getAuthorRating() {
+        return authorRating;
+    }
+
+    public void setAuthorRating(Integer authorRating) {
+        this.authorRating = authorRating;
+    }
+
+    public String getCafeName() {
+        return cafeName;
+    }
+
+    public void setCafeName(String cafeName) {
+        this.cafeName = cafeName;
+    }
+
+    public Report(Integer reportId) {
     }
 
     public Integer getReportId() {
@@ -79,8 +132,9 @@ public class Report {
         this.load = load;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        String format = new SimpleDateFormat("dd MMMM HH:mm").format(date);
+        return format;
     }
 
     public void setDate(Date date) {

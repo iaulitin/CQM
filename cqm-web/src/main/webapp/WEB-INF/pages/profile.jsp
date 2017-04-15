@@ -1,4 +1,3 @@
-<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -39,6 +38,9 @@
         </a>
         <a href="<c:url value="/reports"/>">
             <div class="MenuButton"> Отчеты</div>
+        </a>
+        <a href="<c:url value="/addreport"/>">
+            <div class="MenuButton">Отправить отчет</div>
         </a>
         <a href="<c:url value="/cafeterias"/>">
             <div class="MenuButton"> Информация о столовых</div>

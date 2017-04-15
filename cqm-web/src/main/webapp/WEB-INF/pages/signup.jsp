@@ -4,10 +4,6 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<sec:authorize access="isAuthenticated()">
-    <jsp:forward page="/"/>
-</sec:authorize>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -29,41 +25,41 @@
 <body>
 <div class="container">
     <form:form method="POST" modelAttribute="userForm">
-        <h2 class="form-signin-heading" align="center">Регистрация в CQM</h2>
-        <spring:bind path="login">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="login" class="form-control" placeholder="Имя пользователя"
-                            autofocus="true"></form:input>
-                <form:errors path="login"></form:errors>
-            </div>
-        </spring:bind>
+    <h2 class="form-signin-heading" align="center">Регистрация в CQM</h2>
+    <spring:bind path="login">
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <form:input type="text" path="login" class="form-control" placeholder="Имя пользователя"
+                        autofocus="true"></form:input>
+            <form:errors path="login"></form:errors>
+        </div>
+    </spring:bind>
 
-        <spring:bind path="email">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="email" class="form-control" placeholder="e-mail"
-                            autofocus="true"></form:input>
-                <form:errors path="email"></form:errors>
-            </div>
-        </spring:bind>
+    <spring:bind path="email">
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <form:input type="text" path="email" class="form-control" placeholder="e-mail"
+                        autofocus="true"></form:input>
+            <form:errors path="email"></form:errors>
+        </div>
+    </spring:bind>
 
-        <spring:bind path="password">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="password" class="form-control" placeholder="Пароль"></form:input>
-                <form:errors path="password"></form:errors>
-            </div>
-        </spring:bind>
+    <spring:bind path="password">
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <form:input type="password" path="password" class="form-control" placeholder="Пароль"></form:input>
+            <form:errors path="password"></form:errors>
+        </div>
+    </spring:bind>
 
-        <spring:bind path="confirmPassword">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="confirmPassword" class="form-control"
-                            placeholder="Подтверждение пароля"></form:input>
-                <form:errors path="confirmPassword"></form:errors>
-            </div>
+    <spring:bind path="confirmPassword">
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <form:input type="password" path="confirmPassword" class="form-control"
+                        placeholder="Подтверждение пароля"></form:input>
+            <form:errors path="confirmPassword"></form:errors>
+        </div>
 
-        </spring:bind>
+    </spring:bind>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
-    </form:form>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
+</form:form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>

@@ -1,6 +1,5 @@
 package org.cqm.web.controller;
 
-import jdk.nashorn.internal.runtime.Context;
 import org.apache.commons.codec.binary.Base64;
 import org.cqm.data.entity.Cafeteria;
 import org.cqm.data.services.CafeteriaService;
@@ -30,7 +29,6 @@ public class CafeteriaController {
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
-
         }
         model.addAttribute("cafeterias", cafeterias);
         return "cafeteria";

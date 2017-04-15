@@ -84,6 +84,9 @@
         <a href="<c:url value="/reports"/>">
             <div class="MenuButton"> Отчеты</div>
         </a>
+        <a href="<c:url value="/addreport"/>">
+            <div class="MenuButton">Отправить отчет</div>
+        </a>
         <a href="<c:url value="/cafeterias"/>">
             <div class="MenuButton"> Информация о столовых</div>
         </a>

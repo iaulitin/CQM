@@ -1,11 +1,17 @@
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import org.cqm.data.configuration.AppConfig;
 import org.cqm.data.entity.Cafeteria;
+import org.cqm.data.entity.Report;
 import org.cqm.data.entity.User;
+import org.cqm.data.entity.Vote;
 import org.cqm.data.repositories.CafeteriaRepository;
+import org.cqm.data.repositories.ReportRepository;
 import org.cqm.data.repositories.UserRepository;
+import org.cqm.data.repositories.VoteRepository;
 import org.cqm.data.services.CafeteriaService;
+import org.cqm.data.services.ReportService;
 import org.cqm.data.services.UserService;
+import org.cqm.data.services.VoteService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,6 +23,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -29,9 +36,11 @@ public class Tester {
     private static final Logger logger = Logger.getLogger(Tester.class.getName());
 
     public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+
         logger.info("Testing configuration...");
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
         UserRepository userRepository = context.getBean(UserRepository.class);
         UserService userService = context.getBean(UserService.class);
 
@@ -39,8 +48,40 @@ public class Tester {
         CafeteriaRepository cafeteriaRepository = context.getBean(CafeteriaRepository.class);
         CafeteriaService cafeteriaService = context.getBean(CafeteriaService.class);
 
-        List<Cafeteria> oneCafe = cafeteriaRepository.findByCafeName("КСП");
-        cafeteria = oneCafe.get(0);
+        ReportRepository reportRepository =context.getBean(ReportRepository.class);
+        ReportService reportService = context.getBean(ReportService.class);
+
+        VoteRepository voteRepository =context.getBean(VoteRepository.class);
+        VoteService voteService = context.getBean(VoteService.class);
+
+        System.out.println(cafeteriaService.getCafeteriaRepository().findByCafeName("Veryfood ГК"));
+
+
+//        Vote vote = new Vote();
+//        vote.setReportId(1652);
+//        vote.setUserId(552);
+//        vote.setVote(1);
+//
+//        voteRepository.save(vote);
+//        List<Vote> voteList = voteRepository.findVotesByLogin("lopez");
+//        System.out.println(voteList);
+
+       //System.out.println(reportRepository.findAuthorOfReport(1652));
+    //повесть ограничение на уникальную пару репорт-юзер
+
+
+//        Report report = new Report();
+//        report.setUserId(552);
+//        report.setCafeId(1052);
+//        report.setLoad(10);
+//        report.setDate(new Date());
+//        report.setRating(1);
+//
+//        reportRepository.save(report);
+
+
+//        List<Cafeteria> oneCafe = cafeteriaRepository.findByCafeName("КСП");
+//        cafeteria = oneCafe.get(0);
 //        try {
 //            byte[] bytea = new byte[1000000];
 //            FileInputStream fis = new FileInputStream(cafeteria.getPhoto());

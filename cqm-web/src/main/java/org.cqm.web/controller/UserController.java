@@ -21,8 +21,8 @@ public class UserController {
     public String listRatingTable(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String currentName = auth.getName();
-        User currentUser = null;
 
+        User currentUser = null;
         List<User> users = userService.getUserRepository().findUsersOrderByRatingDesc();
         int rank = 1;
         int shift = 1;
@@ -37,10 +37,15 @@ public class UserController {
                 users.get(i).setRank(rank);
                 shift = 1;
             }
-            if (users.get(i).getLogin().equals(currentName)) {
-                currentUser = users.get(i);
+            if (users.get(i - 1).getLogin().equals(currentName)) {
+                currentUser = users.get(i - 1);
             }
         }
+
+        if (users.get(users.size() - 1).getLogin().equals(currentName)) {
+            currentUser = users.get(users.size() - 1);
+        }
+
 
         if (users.size() < 5) {
         } else {
@@ -52,6 +57,7 @@ public class UserController {
         model.addAttribute("currentName", currentName);
         model.addAttribute("currentRating", currentUser.getRating());
         model.addAttribute("currentRank", currentUser.getRank());
+
         return "user";
     }
 }

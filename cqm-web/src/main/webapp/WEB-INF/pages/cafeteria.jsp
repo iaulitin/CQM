@@ -31,7 +31,7 @@
             </tr>
             <tr class="cafeTr">
                 <td height="200px">
-                    <img class = "CafePhoto" src="data:image/jpg;base64,<c:out value='${cafeteria.base64DataString}'/>"/>
+                    <img class="CafePhoto" src="data:image/jpg;base64,<c:out value='${cafeteria.base64DataString}'/>"/>
                 </td>
                 <td>
                     <div class="CafeName"><c:out value="${cafeteria.cafeName}"/></div>
@@ -57,6 +57,9 @@
         </a>
         <a href="<c:url value="/reports"/>">
             <div class="MenuButton"> Отчеты</div>
+        </a>
+        <a href="<c:url value="/addreport"/>">
+            <div class="MenuButton">Отправить отчет</div>
         </a>
         <a href="<c:url value="/cafeterias"/>">
             <div class="MenuButton"> Информация о столовых</div>
