@@ -1,1 +1,1 @@
-Cafeteria Queues Monitoring (cqm)
+Cafeteria Queues Monitoring (CQM)
